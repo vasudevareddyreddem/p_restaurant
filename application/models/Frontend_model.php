@@ -1,0 +1,197 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Frontend_model extends CI_Model 
+
+{
+	
+	function __construct() 
+	{
+		parent::__construct();
+		$this->load->database("default");
+	}
+	
+	public function aboutus_details_list(){
+	$this->db->select('aboutus_brief.*')->from('aboutus_brief');
+    $this->db->where('aboutus_brief.status',1);
+	return $this->db->get()->row_array();
+	}
+	
+	public function aboutus_home_details_list(){
+	$this->db->select('aboutus.*')->from('aboutus');
+    $this->db->where('aboutus.status',1);
+	return $this->db->get()->row_array();
+	}
+	public function contactus_list(){
+     $this->db->select('contactus.*')->from('contactus');
+    $this->db->where('contactus.status',1);
+	return $this->db->get()->row_array();
+	}
+	
+	
+	public function contactus_details_list(){
+     $this->db->select('contactus.*')->from('contactus');
+    $this->db->where('contactus.status',1);
+	 $return=$this->db->get()->row_array();
+	 //echo '<pre>';print_r($return);exit;
+	 $contact_list=$this->get_contactus_data_list($return['c_id']);
+	 $data=$return;
+	 if(count($contact_list)>0){
+	 $data['contact_list']=isset($contact_list)?$contact_list:'';
+	 }
+	 
+	 if(!empty($data)){
+		 return $data;
+	 }
+	}
+	
+	
+	public function get_contactus_data_list($contact_id){
+	 $this->db->select('contact_data.*')->from('contact_data');
+     $this->db->where('contact_data.contact_id',$contact_id);
+     $this->db->where('contact_data.status',1);
+	 return $this->db->get()->result_array();
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	public function blog_details_list(){
+	 $this->db->select('blog.*')->from('blog');
+    $this->db->where('blog.status',1);
+	return $this->db->get()->result_array();
+	}
+	
+	public function gallery_details_list(){
+	$this->db->select('gallery.*')->from('gallery');
+    $this->db->where('gallery.status',1);
+	return $this->db->get()->result_array();
+	}
+	public function testmonial_details_list(){
+	$this->db->select('testimonial.*')->from('testimonial');
+    $this->db->where('testimonial.status',1);
+	return $this->db->get()->result_array();
+	}
+	public function chefs_details_list(){
+	$this->db->select('chefs.*')->from('chefs');
+    $this->db->where('chefs.status',1);
+	return $this->db->get()->result_array();
+	}
+	public function menu_details_list(){
+	$this->db->select('menu_data.*')->from('menu_data');
+    $this->db->where('menu_data.status',1);
+	return $this->db->get()->result_array();
+	}
+	public function servies_details_list(){
+	$this->db->select('services.*')->from('services');
+    $this->db->where('services.status',1);
+	return $this->db->get()->result_array();
+	}
+	
+	
+	public function servies_brief_list(){
+	$this->db->select('services_brief.*')->from('services_brief');
+    $this->db->where('services_brief.status',1);
+	return $this->db->get()->result_array();
+	}
+	public function daily_special_list(){
+	 $this->db->select('menu_brief.*')->from('menu_brief');
+     $this->db->where('menu_brief.menu_type','Daily special');
+     $this->db->where('menu_brief.status',1);
+	 $return=$this->db->get()->row_array();
+	 //echo '<pre>';print_r($return);exit;
+	 $Item_list=$this->daily_special_item_list($return['m_b_id']);
+	 $data=$return;
+	 if(count($Item_list)>0){
+	 $data['item_list']=isset($Item_list)?$Item_list:'';
+	 }
+	 
+	 if(!empty($data)){
+		 return $data;
+	 }
+	}
+	public function daily_special_item_list($id){
+	 $this->db->select('menu_brief_all_details.*')->from('menu_brief_all_details');
+     $this->db->where('menu_brief_all_details.menu_brief_id',$id);
+     $this->db->where('menu_brief_all_details.status',1);
+	 return $this->db->get()->result_array();
+	
+	
+	}
+	
+	public function get_aboutus_brief_list(){
+	$this->db->select('aboutus_brief.*')->from('aboutus_brief');
+	$this->db->where('aboutus_brief.status !=', 2);
+	 $return=$this->db->get()->result_array();
+  foreach($return as $list){
+   $lists=$this->get_aboutus_data_list($list['a_b_id']);
+   //echo '<pre>';print_r($lists);exit;
+   $data[$list['a_b_id']]=$list;
+   $data[$list['a_b_id']]['aboutus_list']=$lists;
+   
+  }
+  
+  if(!empty($data)){
+   
+   return $data;
+   
+  }
+ }
+	public function get_aboutus_data_list($emp_id){
+	 $this->db->select('aboutus_paragrap.*')->from('aboutus_paragrap');
+     $this->db->where('aboutus_paragrap.emp_id',$emp_id);
+     $this->db->where('aboutus_paragrap.status',1);
+	 return $this->db->get()->result_array();
+	
+	}
+	
+	public function menu_special_list(){
+	$this->db->select('menu_brief.*')->from('menu_brief');
+	 $this->db->where('menu_brief.menu_type','Menu');
+	$this->db->where('menu_brief.status !=', 2);
+  $return=$this->db->get()->result_array();
+  foreach($return as $list){
+   $lists=$this->get_menu_data_list($list['m_b_id']);
+   //echo '<pre>';print_r($lists);exit;
+   $data[$list['m_b_id']]=$list;
+   $data[$list['m_b_id']]['menu_list']=$lists;
+   
+  }
+  
+  if(!empty($data)){
+   
+   return $data;
+   
+  }
+ }
+	public function get_menu_data_list($menu_brief_id){
+	$this->db->select('menu_brief_all_details.*')->from('menu_brief_all_details');
+     $this->db->where('menu_brief_all_details.menu_brief_id',$menu_brief_id);
+     $this->db->where('menu_brief_all_details.status',1);
+	 return $this->db->get()->result_array();
+	
+	}
+	
+	
+	
+	
+	
+	public function topheader_details_list(){
+	$this->db->select('topheader.*')->from('topheader');
+    $this->db->where('topheader.status',1);
+	return $this->db->get()->row_array();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  }

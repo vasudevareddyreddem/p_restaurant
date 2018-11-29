@@ -47,6 +47,31 @@ class Topheader extends In_frontend {
 				'updated_at'=>date('Y-m-d H:i:s'),
 				'created_by'=>isset($admindetails['u_id'])?$admindetails['u_id']:''
 				 );
+				 if($this->input->post()){
+					
+					$daily=$this->Header_model->get_top_details();
+					if($daily==0){
+					$save=$this->Header_model->save_topheader_details($save_data);	
+						
+					}else{
+				 $save_data=array(
+	            'address'=>isset($post['address'])?$post['address']:'',
+				'phone_number'=>isset($post['phone_number'])?$post['phone_number']:'',
+				'facebook_link'=>isset($post['facebook_link'])?$post['facebook_link']:'',
+				'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
+				'google_link'=>isset($post['google_link'])?$post['google_link']:'',
+				'pinterest_link'=>isset($post['pinterest_link'])?$post['pinterest_link']:'',
+				'status'=>0,
+				'created_at'=>date('Y-m-d H:i:s'),
+				'updated_at'=>date('Y-m-d H:i:s'),
+				'created_by'=>isset($admindetails['u_id'])?$admindetails['u_id']:''
+				 );
+				 $save=$this->Header_model->save_topheader_details($save_data);	
+					}
+				}else{
+				 $save=$this->Header_model->save_topheader_details($save_data);	
+					}
+				
 	            //echo'<pre>';print_r($save_data);exit;
 	            $save=$this->Header_model->save_topheader_details($save_data);	
 			//echo'<pre>';print_r($save);exit;    

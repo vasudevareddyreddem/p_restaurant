@@ -32,13 +32,13 @@
 							<tbody>
 							<?php foreach($header_list as $list){?>
 								<tr>
-								   <td><img class="img-responsive" src="<?php echo base_url('assets/adminprofilepic/'.$list['favicon']);?>" alt="" style="height:50px;width:auto;"></td>
+								   <td><img class="img-responsive" src="<?php echo base_url('assets/headerpic/'.$list['favicon']);?>" alt="" style="height:50px;width:auto;"></td>
 									
 										<td>
-											<img class="img-responsive" src="<?php echo base_url('assets/adminprofilepic/'.$list['logo']);?>" style="height:50px;width:auto;">
+											<img class="img-responsive" src="<?php echo base_url('assets/headerpic/'.$list['logo']);?>" style="height:50px;width:auto;">
 											</td>
 											<td>
-												<img class="img-responsive" src="<?php echo base_url('assets/adminprofilepic/'.$list['banner']);?>" alt="" style="height:50px;width:auto;">
+												<img class="img-responsive" src="<?php echo base_url('assets/headerpic/'.$list['banner']);?>" alt="" style="height:50px;width:auto;">
 												</td>
 												<td><?php echo $list['title'];?></td>
 												<td><?php if($list['status']==1){ echo "Active";}else{ echo "Deactive"; } ?></td>

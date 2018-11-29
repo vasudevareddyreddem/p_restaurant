@@ -42,7 +42,7 @@ class Topheader extends In_frontend {
 				'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
 				'google_link'=>isset($post['google_link'])?$post['google_link']:'',
 				'pinterest_link'=>isset($post['pinterest_link'])?$post['pinterest_link']:'',
-				'status'=>1,
+				'status'=>0,
 				'created_at'=>date('Y-m-d H:i:s'),
 				'updated_at'=>date('Y-m-d H:i:s'),
 				'created_by'=>isset($admindetails['u_id'])?$admindetails['u_id']:''
@@ -137,8 +137,6 @@ class Topheader extends In_frontend {
 				'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
 				'google_link'=>isset($post['google_link'])?$post['google_link']:'',
 				'pinterest_link'=>isset($post['pinterest_link'])?$post['pinterest_link']:'',
-				'status'=>1,
-				'created_at'=>date('Y-m-d H:i:s'),
 				'updated_at'=>date('Y-m-d H:i:s'),
 				'created_by'=>isset($admindetails['u_id'])?$admindetails['u_id']:''
 				 );
@@ -170,6 +168,13 @@ class Topheader extends In_frontend {
 						$statu=0;
 					}else{
 						$statu=1;
+					}
+					if($status==0){
+						$check=$this->Header_model->check_top_header_status_list();
+						if(count($check)>0){
+							$this->session->set_flashdata('error'," Already one active. If you want active another one at that time deactivate previous one then try again once   .");
+							redirect('topheader/lists');
+						}
 					}
 					if($t_h_id!=''){
 						$stusdetails=array(

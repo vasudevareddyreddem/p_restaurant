@@ -1,12 +1,12 @@
 
         <div class="page-container">
           <div class="top-header top-bg-parallax">
-            <div data-parallax="scroll" data-image-src="<?php echo base_url();?>assets/images/slider/header-bg.jpg" class="slides parallax-window">
+            <div data-parallax="scroll" data-image-src="<?php echo base_url('assets/headerpic/'.$header_imgs['banner']);?>" class="slides parallax-window">
               <div class="slide-content slide-layout-02">
                 <div class="container">
                   <div class="slide-content-inner"><img src="<?php echo base_url();?>assets/images/slider/slider2-icon.png" data-ani-in="fadeInUp" data-ani-out="fadeOutDown" data-ani-delay="500" alt="Pracha" class="slide-icon img img-responsive animated">
-                    <h3 data-ani-in="fadeInUp" data-ani-out="fadeOutDown" data-ani-delay="1000" class="slide-title animated">PRACHA RESTAURANT</h3>
-                    <p data-ani-in="fadeInUp" data-ani-out="fadeOutDown" data-ani-delay="1500" class="slide-sub-title animated"><span class="line-before"></span><span class="line-after"></span><span class="text"><span>Tasty</span><span>Delicious</span><span>Savoury</span></span></p>
+                    <h3 data-ani-in="fadeInUp" data-ani-out="fadeOutDown" data-ani-delay="1000" class="slide-title animated"><?php echo isset($header_imgs['title'])?$header_imgs['title']:''; ?></h3>
+                    <p data-ani-in="fadeInUp" data-ani-out="fadeOutDown" data-ani-delay="1500" class="slide-sub-title animated"><span class="line-before"></span><span class="line-after"></span><span class="text"><span><?php echo isset($header_imgs['tag_line'])?$header_imgs['tag_line']:''; ?></span></span></p>
                   </div>
                 </div>
               </div>

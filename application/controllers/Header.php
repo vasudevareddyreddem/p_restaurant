@@ -37,7 +37,7 @@ public function addpost(){
 		
 		 if($_FILES['favicon']['name']!=''){
 					$favicons=$_FILES['favicon']['name'];
-					move_uploaded_file($_FILES['favicon']['tmp_name'], "assets/adminprofilepic/" . $_FILES['favicon']['name']);
+					move_uploaded_file($_FILES['favicon']['tmp_name'], "assets/headerpic/" . $_FILES['favicon']['name']);
 
 					}else{
 					$favicons='';
@@ -45,14 +45,14 @@ public function addpost(){
 		
 		 if($_FILES['logo']['name']!=''){
 					$logos=$_FILES['logo']['name'];
-					move_uploaded_file($_FILES['logo']['tmp_name'], "assets/adminprofilepic/" . $_FILES['logo']['name']);
+					move_uploaded_file($_FILES['logo']['tmp_name'], "assets/headerpic/" . $_FILES['logo']['name']);
 
 					}else{
 					$logos='';
 					}
 		 if($_FILES['banner']['name']!=''){
 					$banners=$_FILES['banner']['name'];
-					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/adminprofilepic/" . $_FILES['banner']['name']);
+					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/headerpic/" . $_FILES['banner']['name']);
 
 					}else{
 					$banners='';
@@ -132,7 +132,7 @@ public function editpost(){
 						unlink('assets/adminprofilepic/'.$edit_header['favicon']);
 					}
 					$favicons=$_FILES['favicon']['name'];
-					move_uploaded_file($_FILES['favicon']['tmp_name'], "assets/adminprofilepic/" . $_FILES['favicon']['name']);
+					move_uploaded_file($_FILES['favicon']['tmp_name'], "assets/headerpic/" . $_FILES['favicon']['name']);
 
 					}else{
 					$favicons=$edit_header['favicon'];
@@ -143,7 +143,7 @@ public function editpost(){
 						unlink('assets/adminprofilepic/'.$edit_header['logo']);
 					}
 					$logos=$_FILES['logo']['name'];
-					move_uploaded_file($_FILES['logo']['tmp_name'], "assets/adminprofilepic/" . $_FILES['logo']['name']);
+					move_uploaded_file($_FILES['logo']['tmp_name'], "assets/headerpic/" . $_FILES['logo']['name']);
 
 					}else{
 					$logos=$edit_header['logo'];
@@ -154,7 +154,7 @@ public function editpost(){
 						unlink('assets/adminprofilepic/'.$edit_header['banner']);
 					}
 					$banners=$_FILES['banner']['name'];
-					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/adminprofilepic/" . $_FILES['banner']['name']);
+					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/headerpic/" . $_FILES['banner']['name']);
 
 					}else{
 					$banners=$edit_header['banner'];
@@ -199,6 +199,14 @@ public function editpost(){
 						$statu=0;
 					}else{
 						$statu=1;
+					}
+					
+					if($status==0){
+						$check=$this->Header_model->check_header_status_list();
+						if(count($check)>0){
+							$this->session->set_flashdata('error'," Already one active. If you want active another one at that time deactivate previous one then try again once   .");
+							redirect('header/lists');
+						}
 					}
 					if($h_id!=''){
 						$stusdetails=array(

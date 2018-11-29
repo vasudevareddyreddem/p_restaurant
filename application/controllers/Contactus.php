@@ -70,10 +70,10 @@ class Contactus extends In_frontend {
 		if(count($save)>0){
 				$this->session->set_flashdata('success',"contactus details successfully added");	
 				redirect('contactus/index');
-			}else{
-				$this->session->set_flashdata('success',"contactus details successfully added");	
-				redirect('contactus/index');;  
-			}
+			           }else{
+						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+						redirect('contactus/index');
+					}
 	
 		}		
 	

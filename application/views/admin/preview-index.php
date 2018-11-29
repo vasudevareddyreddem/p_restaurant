@@ -62,9 +62,47 @@
 								  <?php foreach($list['food_img_list'] as $lis){ ?>
 								  
 								  <?php } ?>
-							  <div class="cat-wrapper">
-								<div class="item"><img src="assets/images/product/pd-cat-dessert.png" alt="" class="img img-responsive img-full"></div>
+							 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+									<?php $cnt=1;foreach($list['food_img_list'] as $lis){ ?>
+										<?php if($cnt==1){ ?>
+										  <li data-target="#myCarousel" data-slide-to="<?php echo $cnt; ?>" class="active"></li>
+										<?php }else{ ?>
+										<li data-target="#myCarousel" data-slide-to="<?php echo $cnt; ?>"></li>
+										<?php } ?>
+									 <?php $cnt++;} ?>
+									</ol>
+
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner">
+											  <?php $cnts=1;foreach($list['food_img_list'] as $lis){ ?>
+											  
+											  <?php if($cnts==1){ ?>
+											   <div class="item active">
+													<img src="<?php echo base_url('assets/menu_bar_brief/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_pic'])?$lis['org_pic']:''; ?>" style="width:100%;">
+												  </div>
+											  <?php }else{ ?>
+											   <div class="item">
+												<img src="<?php echo base_url('assets/menu_bar_brief/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_pic'])?$lis['org_pic']:''; ?>" style="width:100%;">
+											  </div>
+											  <?php } ?>
+											  
+												 
+											  <?php $cnts++;} ?>
+									</div>
+
+								<!-- Left and right controls -->
+								<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+								  <span class="glyphicon glyphicon-chevron-left"></span>
+								  <span class="sr-only">Previous</span>
+								</a>
+								<a class="right carousel-control" href="#myCarousel" data-slide="next">
+								  <span class="glyphicon glyphicon-chevron-right"></span>
+								  <span class="sr-only">Next</span>
+								</a>
 							  </div>
+							  <?php } ?>
 							</div>
                             <div class="col-md-7 col-sm-12">
                               <div class="products">

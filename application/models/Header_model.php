@@ -486,6 +486,18 @@ class Header_model extends CI_Model
 	}
 	
 	
+	public function check_header_status_list(){
+		$this->db->select('*')->from('header');
+	    $this->db->where('status',1);
+	    return $this->db->get()->row_array();
+	}
+	public function check_top_header_status_list(){
+		$this->db->select('*')->from('topheader');
+	    $this->db->where('status',1);
+	    return $this->db->get()->row_array();
+	}
+	
+	
 	
 	
 	

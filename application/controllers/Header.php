@@ -200,6 +200,14 @@ public function editpost(){
 					}else{
 						$statu=1;
 					}
+					
+					if($status==0){
+						$check=$this->Header_model->check_header_status_list();
+						if(count($check)>0){
+							$this->session->set_flashdata('error'," Already one active. If you want active another one at that time deactivate previous one then try again once   .");
+							redirect('header/lists');
+						}
+					}
 					if($h_id!=''){
 						$stusdetails=array(
 							'status'=>$statu,

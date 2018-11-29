@@ -26,6 +26,7 @@
 											<th>facebook link</th>
 											<th>twitter link</th>
 											<th>google+ link</th>
+											<th>Pinterest  link</th>
 											<th>Status</th>
 											<th class="text-right">Action</th>
 										</tr>
@@ -42,6 +43,7 @@
 											<td><?php echo $list['facebook_link'];?></td>
 											<td><?php echo $list['twitter_link'];?></td>
 											<td><?php echo $list['google_link'];?></td>
+											<td><?php echo $list['pinterest_link'];?></td>
 											<td><?php if($list['status']==1){ echo "Active";}else{ echo "Deactive"; } ?></td>
 											<td class="text-right">
 											<a href="<?php echo base_url('topheader/edit/'.base64_encode($list['t_h_id'])); ?>"  data-toggle="tooltip" title="Edit" class="btn btn-success"><i class="fa fa-pencil btn btn-success"></i></a>

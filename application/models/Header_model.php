@@ -448,6 +448,13 @@ class Header_model extends CI_Model
 	$this->db->where('status',1);
 	return $this->db->get()->row_array()?1:0;	
 	}
+	/* daily special menu */
+	public  function check_special_menu_active_ornot(){
+	 $this->db->select('menu_brief.*')->from('menu_brief');
+	 $this->db->where('menu_type','Daily special');
+	 $this->db->where('status',1);
+	 return $this->db->get()->row_array();	
+	}
 	
 	
 	

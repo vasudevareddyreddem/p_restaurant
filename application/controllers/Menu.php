@@ -565,6 +565,63 @@ if($this->session->userdata('restaurantdetails'))
 	   }
 
 
+}
+public function dailyspecialbriefstatus(){
+	 if($this->session->userdata('restaurantdetails'))
+		{	
+         $admindetails=$this->session->userdata('restaurantdetails');	
+	             $m_b_id=base64_decode($this->uri->segment(3));
+					$status=base64_decode($this->uri->segment(4));
+					
+					//echo '<pre>';print_r($m_b_id);
+					if($status==1){
+						$statu=0;
+					}else{
+						$statu=1;
+					}
+					if($status==0){
+						$check_active_status=$this->Header_model->check_special_menu_active_ornot();
+						if(count($check_active_status)>0){
+							$this->session->set_flashdata('error',"Already one daily special menu active. If you want active another special at that time deactivate previous special then try again once");
+							redirect('menu/brieflists');
+						}
+						//echo '<pre>';print_r($check_active_status);exit;
+					}
+					
+					//exit;
+					if($m_b_id!=''){
+						$stusdetails=array(
+							'status'=>$statu,
+							'updated_at'=>date('Y-m-d H:i:s')
+							);
+							//echo'<pre>';print_r($stusdetails);exit;
+							$statusdata=$this->Header_model->update_menu_brief_details($m_b_id,$stusdetails);
+							//echo'<pre>';print_r($statusdata);exit;
+							//echo $this->db->last_query();exit;	
+							if(count($statusdata)>0){
+								if($status==1){
+								$this->session->set_flashdata('success',"menu brief details successfully Deactivate.");
+								}else{
+									$this->session->set_flashdata('success',"menu  brief details successfully Activate.");
+								}
+								redirect('menu/brieflists');
+							}else{
+									$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+									redirect('menu/brieflists');
+							}
+						}
+						else{
+						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+						redirect('dashboard');
+					}	
+	
+	
+          }else{
+		 $this->session->set_flashdata('error',"Please login and continue");
+		 redirect('');  
+	   }
+
+
 }	
  public function briefdelete()
 {

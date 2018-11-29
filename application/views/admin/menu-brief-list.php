@@ -40,8 +40,13 @@
 											<td><?php if($list['status']==1){ echo "Active";}else{ echo "Deactive"; } ?></td>
 
 											<td class="text-right">
-															<a href="<?php echo base_url('menu/briefedit/'.base64_encode($list['m_b_id'])); ?>"  data-toggle="tooltip" title="Edit" class="btn btn-success"><i class="fa fa-pencil btn btn-success"></i></a>
-														<a href="<?php echo base_url('menu/briefstatus/'.base64_encode($list['m_b_id']).'/'.base64_encode($list['status'])); ?>" data-toggle="tooltip" title="status" class="btn btn-warning"><i class="fa fa-info-circle btn btn-warning"></i></a>
+														<a href="<?php echo base_url('menu/briefedit/'.base64_encode($list['m_b_id'])); ?>"  data-toggle="tooltip" title="Edit" class="btn btn-success"><i class="fa fa-pencil btn btn-success"></i></a>
+														<?php if($list['menu_type']=='Daily special'){ ?>
+														<a href="<?php echo base_url('menu/dailyspecialbriefstatus/'.base64_encode($list['m_b_id']).'/'.base64_encode($list['status'])); ?>" data-toggle="tooltip" title="status" class="btn btn-warning"><i class="fa fa-info-circle btn btn-warning"></i></a>
+														<?php }else{ ?>
+															<a href="<?php echo base_url('menu/briefstatus/'.base64_encode($list['m_b_id']).'/'.base64_encode($list['status'])); ?>" data-toggle="tooltip" title="status" class="btn btn-warning"><i class="fa fa-info-circle btn btn-warning"></i></a>
+
+														<?php } ?>
 														<a href="<?php echo base_url('menu/briefdelete/'.base64_encode($list['m_b_id']));?>" data-toggle="tooltip"  title="Delete" class="btn btn-danger"><i class="fa fa-trash btn btn-danger"></i></a>
 														<a href="<?php echo base_url('menu/brieflistsview/'.base64_encode($list['m_b_id']));?>" data-toggle="tooltip"  title="View" class="btn btn-primary"><i class="fa fa-eye btn btn-primary"></i></a>
 														</td>

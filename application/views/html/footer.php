@@ -68,31 +68,31 @@
                         <h3 class="res-title">Open Hour</h3>
                         <div class="res-date-time">
                          
-						  
+						  <?Php foreach($opening_hours['contact_list'] as $list){ ?>
                           <div class="res-date-time-item">
                             <div class="res-date">
                               <div class="res-date-item">
                                 <div class="res-date-text">
-								<?Php foreach($opening_hours['contact_list'] as $list){ ?>
+								
                                   <p><?php echo isset($list['day'])?$list['day']:''; ?></p>
 								  
-								<?php }?>
+								
                                 </div>
-								<?Php foreach($opening_hours['contact_list'] as $list){ ?>
+								
                                 <div class="res-date-dot">.......................................</div>
-								<?php }?>
+								
                               </div>
                             </div>
                             <div class="res-time">
                               <div class="res-time-item">
-							  <?Php foreach($opening_hours['contact_list'] as $list){ ?>
+							 
                                 <p><?php echo isset($list['time_from'])?$list['time_from']:''; ?>-<?php echo isset($list['time_to'])?$list['time_to']:''; ?></p>
-								<?php }?>
+								
                               </div>
                             </div>
                             <div class="clearfix"></div>
                           </div>
-						  
+						  <?php }?>
 						  
                         </div>
                         <h3 class="res-title">Reservation Numbers</h3>

@@ -349,9 +349,40 @@ if($this->session->userdata('restaurantdetails'))
 					'updated_at'=>date('Y-m-d H:i:s'),
 					'created_by'=>$admindetails['u_id'],
 					);
+					if($this->input->post('menu_type')=='Daily special'){
+					
+					$daily=$this->Header_model->get_daily_details();
+					if($daily==0){
 					$save=$this->Header_model->save_menu_brief_details($add);	
+						
+					}else{
+					$add=array(
+					'banner'=>isset($images)?$images:'',
+					'title'=>isset($post['title'])?$post['title']:'',
+					'menu_type'=>isset($post['menu_type'])?$post['menu_type']:'',
+					'status'=>0,
+					'created_at'=>date('Y-m-d H:i:s'),
+					'updated_at'=>date('Y-m-d H:i:s'),
+					'created_by'=>$admindetails['u_id'],
+					);	
+					$save=$this->Header_model->save_menu_brief_details($add);	
+					}
+					}else{
+						$save=$this->Header_model->save_menu_brief_details($add);
+					}
+						
 				
 					if(count($save)>0){
+						if($this->input->post('menu_type')=='Daily special'){
+						if($daily==0){
+							$status=1;
+						}else{
+							$status=0;
+						}
+						}else{
+							$status=1;
+							
+						}
 							$cnt=1;foreach ($_FILES['image']['tmp_name'] as $key => $val ) {
 								   if($_FILES["image"]["name"][$key]!=''){
 									   
@@ -366,7 +397,7 @@ if($this->session->userdata('restaurantdetails'))
 										  'name'=>isset($post['name'][$key])?$post['name'][$key]:'',
 										  'description'=>isset($post['description'][$key])?$post['description'][$key]:'',
 										  'price'=>isset($post['price'][$key])?$post['price'][$key]:'',
-										  'status'=>1,
+										  'status'=>$status,
 										  'created_at'=>date('Y-m-d H:i:s'),
 										  'updated_at'=>date('Y-m-d H:i:s'),
 										  'created_by'=>$admindetails['u_id'],

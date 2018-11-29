@@ -53,6 +53,8 @@
 													<option value="Lunch" <?php if($edit_menu['food_type']=='Lunch'){ echo "selected"; } ?>>Lunch</option>
 													<option value="Snaks" <?php if($edit_menu['food_type']=='Snaks'){ echo "selected"; } ?>>Snaks</option>
 													<option value="Dinner" <?php if($edit_menu['food_type']=='Dinner'){ echo "selected"; } ?>>Dinner</option>
+													<option value="Desset" <?php if($edit_menu['food_type']=='Desset'){ echo "selected"; } ?>>Desset</option>
+													<option value="Drink" <?php if($edit_menu['food_type']=='Drink'){ echo "selected"; } ?>>Drink</option>
 												  </select>
 												</td>
 												<td class="form-group">

@@ -71,7 +71,7 @@ class Preview extends CI_Controller
 		{	
          $admindetails=$this->session->userdata('restaurantdetails');
          $data['daily_special_list']=$this->Frontend_model->daily_special_list(); 
-		 
+		 $data['menu_special']=$this->Frontend_model->menu_special_list();
 		 
 		 
 	      $this->load->view('html/menu',$data);

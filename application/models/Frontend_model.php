@@ -125,7 +125,7 @@ class Frontend_model extends CI_Model
 	
 	public function get_aboutus_brief_list(){
 	$this->db->select('aboutus_brief.*')->from('aboutus_brief');
-	$this->db->where('aboutus_brief.status !=', 2);
+	$this->db->where('aboutus_brief.status', 1);
 	 $return=$this->db->get()->result_array();
   foreach($return as $list){
    $lists=$this->get_aboutus_data_list($list['a_b_id']);
@@ -152,13 +152,13 @@ class Frontend_model extends CI_Model
 	public function menu_special_list(){
 	$this->db->select('menu_brief.*')->from('menu_brief');
 	 $this->db->where('menu_brief.menu_type','Menu');
-	$this->db->where('menu_brief.status !=', 2);
-  $return=$this->db->get()->result_array();
+     $this->db->where('menu_brief.status',1);
+	 $return=$this->db->get()->result_array();
   foreach($return as $list){
    $lists=$this->get_menu_data_list($list['m_b_id']);
    //echo '<pre>';print_r($lists);exit;
    $data[$list['m_b_id']]=$list;
-   $data[$list['m_b_id']]['menu_list']=$lists;
+   $data[$list['m_b_id']]['menus_list']=$lists;
    
   }
   

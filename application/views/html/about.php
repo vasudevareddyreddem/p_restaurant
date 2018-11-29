@@ -9,12 +9,14 @@
             </div>
           </div>
           <div class="page-content-wrapper">
+		  <?php if(isset($aboutus_brief_list) && count($aboutus_brief_list)){?>
             <section class="ab-timeline-section padding-top-100 padding-bottom-100">
               <div class="container">
+			  <?php foreach($aboutus_brief_list as $list){?>
                 <div class="swin-sc swin-sc-title style-2">
-				<?php foreach($aboutus_brief_list as $list){?>
+				
                   <h3 class="title"><span><?php echo $list['title'];?></span></h3>
-				<?php }?>
+				
                 </div>
                 <div data-item="6" class="swin-sc swin-sc-timeline-2">
                  
@@ -24,11 +26,11 @@
                        
                         <div class="timeline-content-detail">
                           <p>
-						  <?php foreach($aboutus_brief_list as $list){?>
+						 
 						  
 						  <?php foreach($list['aboutus_list'] as $li){ ?>
 						  <?php echo $li['paragraph'].'<br>'; ?>
-						  <?php } ?>
+						  
 						  
 						  <?php }?>
 						  </p>
@@ -40,9 +42,10 @@
                     </div>
                   </div>
                 </div>
+				<?php }?>
               </div>
             </section>
-            
+		  <?php } ?>
             
             
             <section class="counter-section-03 padding-top-100 padding-bottom-100">

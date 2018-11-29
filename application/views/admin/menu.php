@@ -72,6 +72,9 @@
 													<option value="Lunch">Lunch</option>
 													<option value="Snaks">Snaks</option>
 													<option value="Dinner">Dinner</option>
+													<option value="Desset">Desset</option>
+													<option value="Drink">Drink</option>
+
 												  </select>
 												</td>
 												<td class="form-group">

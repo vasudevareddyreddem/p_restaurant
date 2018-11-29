@@ -440,11 +440,19 @@ class Header_model extends CI_Model
 	}
 	
 	
-	public function delete_dailty_menu_brief_details(){
-	$this->db->set('status',2);
-	$this->db->where('menu_brief.menu_type','Daily special');
-    $this->db->update("menu_brief");
+	
+	
+	public function get_daily_details(){
+	$this->db->select('menu_brief.*')->from('menu_brief');
+	$this->db->where('menu_type','Daily special');
+	$this->db->where('status',1);
+	return $this->db->get()->row_array()?1:0;	
 	}
+	
+	
+	
+	
+	
 	
 	
 	

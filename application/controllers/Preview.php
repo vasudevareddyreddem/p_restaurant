@@ -13,6 +13,8 @@ class Preview extends CI_Controller
 			   $data['contactus']=$this->Frontend_model->contactus_list($admindetails);
 			  $data['topheader']=$this->Frontend_model->topheader_details_list($admindetails);
              $data['opening_hours']=$this->Frontend_model->contactus_details_list($admindetails);
+			             $data['header_imgs']=$this->Frontend_model->get_header_img_details();
+
 
 		        //echo'<pre>';print_r($data);exit;
 			   $this->load->view('html/header',$data);
@@ -26,6 +28,7 @@ class Preview extends CI_Controller
     if($this->session->userdata('restaurantdetails'))
 		{	
          $admindetails=$this->session->userdata('restaurantdetails');
+            $data['header_imgs']=$this->Frontend_model->get_header_img_details();
             $data['blog_list']=$this->Frontend_model->blog_details_list();
 		 		  //echo'<pre>';print_r($data);exit;
           $data['gallery_list']=$this->Frontend_model->gallery_details_list();
@@ -34,7 +37,7 @@ class Preview extends CI_Controller
 		   $data['menu_list']=$this->Frontend_model->menu_item_details_list();
 		   $data['servies_list']=$this->Frontend_model->servies_details_list();
 		   $data['daily_special_list']=$this->Frontend_model->daily_special_list();
-			//echo'<pre>';print_r($data['menu_list']);exit;
+			//echo'<pre>';print_r($data['header_imgs']);exit;
 	      $this->load->view('admin/preview-index',$data);
           $this->load->view('html/footer');
  

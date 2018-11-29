@@ -198,6 +198,11 @@ class Frontend_model extends CI_Model
 		return $this->db->get()->result_array();
 	}
 	
+	public function get_header_img_details(){
+	 $this->db->select('header.*')->from('header');
+	 $this->db->where('status',1);
+	 return $this->db->get()->row_array();	
+	}
 	
 	
 	

@@ -6,8 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PRACHA RESTAURANT</title>
-		<link rel="icon" href="http://prachatech.com/assets/vendor/img/fav.png" >
+    <title><?php echo isset($header_imgs['title'])?$header_imgs['title']:'PRACHA RESTAURANT'; ?></title>
+	 <?php if(isset($header_imgs['logo']) && $header_imgs['logo']!=''){ ?>
+		<link rel="icon" href="<?php echo base_url('assets/headerpic/'.$header_imgs['favicon']);?>" >
+	 <?php }else{ ?>
+	 <link rel="icon" href="http://prachatech.com/assets/vendor/img/fav.png" >
+	 <?php } ?>
     <!-- Bootstrap CSS-->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome-->
@@ -65,10 +69,7 @@
                             <li><a target="_blank" href="http://<?php echo isset($topheader['google_link'])?$topheader['google_link']:''; ?>"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                   </div>
-                  <div class="item">
-				  
-                    <div class="wg-social"><i class="fa fa-user"></i><span>My Account</span></div>
-                  </div>
+                
                 </div>
               </div>
             </div>
@@ -78,7 +79,14 @@
              
               <div class="open-offcanvas">&#9776;</div>
               
-              <div class="header-logo"><a href="<?php echo base_url('home'); ?>" class="logo logo-static"><img src="<?php echo base_url();?>assets/images/logo.png" alt="pracha" class="logo-img img-responsive"></a><a href="<?php echo base_url('home'); ?>" class="logo logo-fixed"><img src="<?php echo base_url();?>assets/images/logo.png" alt="pracha" class="logo-img img-responsive" style="height:50px;width:auto;background:#f15f2a"></a></div>
+              <div class="header-logo"><a href="<?php echo base_url(); ?>" class="logo logo-static">
+			  <?php if(isset($header_imgs['logo']) && $header_imgs['logo']!=''){ ?>
+			  <img src="<?php echo base_url('assets/headerpic/'.$header_imgs['logo']);?>" alt="<?php echo isset($header_imgs['logo'])?$header_imgs['logo']:''; ?>" class="logo-img img-responsive">
+			  <?php }else{ ?>
+			  	<img src="<?php echo base_url();?>assets/images/logo.png" alt="pracha" class="logo-img img-responsive">
+
+			  <?php } ?>
+			  </a><a href="<?php echo base_url('home'); ?>" class="logo logo-fixed"><img src="<?php echo base_url();?>assets/images/logo.png" alt="pracha" class="logo-img img-responsive" style="height:50px;width:auto;background:#f15f2a"></a></div>
               <nav id="main-nav-offcanvas" class="main-nav-wrapper">
                 <div class="close-offcanvas-wrapper"><span class="close-offcanvas">x</span></div>
                 <div class="main-nav">

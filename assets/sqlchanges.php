@@ -387,3 +387,27 @@ CREATE TABLE `contactus_post` (
   PRIMARY KEY (`c_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1
 
+
+
+
+
+
+Create Table
+
+CREATE TABLE `reservation_time` (
+  `r_t_id` int(11) NOT NULL AUTO_INCREMENT,
+  `time_form` varchar(250) DEFAULT NULL,
+  `time_to` varchar(250) DEFAULT NULL,
+  `time_differnce` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`r_t_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+
+
+
+
+

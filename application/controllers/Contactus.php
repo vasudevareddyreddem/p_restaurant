@@ -12,7 +12,20 @@ class Contactus extends In_frontend {
 			$this->load->library('user_agent');		
 		}
 		
-	
+	public function index(){
+    if($this->session->userdata('restaurantdetails'))
+		{	
+         $admindetails=$this->session->userdata('restaurantdetails');
+          
+		 $data['contact_details']=$this->Header_model->check_contact_details();
+	      $this->load->view('admin/contactus',$data);
+	      $this->load->view('admin/footer');
+	    //echo '<pre>';print_r($data);exit;
+         }else{
+		 $this->session->set_flashdata('error',"Please login and continue");
+		 redirect('');  
+	   }
+}
 		
 	public function addpost(){
 	if($this->session->userdata('restaurantdetails'))

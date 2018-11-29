@@ -13,14 +13,14 @@
 									<div class="col-md-4"> 
 										<div class="form-group">
 											<label>Time From </label>
-											 <input type="time" class="form-control" name="time_form"  placeholder="Enter Time From ">
+											 <input type="time" class="form-control" name="time_form"  placeholder="Enter Time From" value="<?php echo isset($reservation_time['time_form'])?$reservation_time['time_form']:''; ?>"/>
 										</div>
 									</div>
 									
 									<div class="col-md-4"> 
 										<div class="form-group">
 											<label>Time Upto </label>
-											 <input type="time" class="form-control" name="time_to"  placeholder="Enter Time Upto ">
+											 <input type="time" class="form-control" name="time_to"  placeholder="Enter Time Upto" value="<?php echo isset($reservation_time['time_to'])?$reservation_time['time_to']:''; ?>"/>
 										</div>
 									</div>
 									
@@ -29,10 +29,10 @@
 									  <label>Differnce Time Hours</label>
 									  <select class="form-control" name="time_differnce"  >
 										<option value="">Differnce Time Hours</option>
-										<option value="1 hours">1 hours</option>
-										<option value="2 hours">2 hours</option>
-										<option value="3 hours">3 hours</option>
-										<option value="4 hours">4 hours</option>
+										<option value="1 hours" <?php if($reservation_time['time_differnce']=='1 hours'){ echo "selected"; } ?>>1 hours</option>
+										<option value="2 hours" <?php if($reservation_time['time_differnce']=='2 hours'){ echo "selected"; } ?>>2 hours</option>
+										<option value="3 hours" <?php if($reservation_time['time_differnce']=='3 hours'){ echo "selected"; } ?>>3 hours</option>
+										<option value="4 hours" <?php if($reservation_time['time_differnce']=='4 hours'){ echo "selected"; } ?>>4 hours</option>
 									  </select>
 									  </div>
 

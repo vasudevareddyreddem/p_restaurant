@@ -59,10 +59,10 @@
                 <div class="topbar-content">
                   <div class="item">
                     <ul class="socials-nb list-inline wg-social">
-                      <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-                      <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
+                     <li><a target="_blank" href="http://<?php echo isset($topheader['facebook_link'])?$topheader['facebook_link']:''; ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($topheader['twitter_link'])?$topheader['twitter_link']:''; ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($topheader['pinterest_link'])?$topheader['pinterest_link']:''; ?>"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($topheader['google_link'])?$topheader['google_link']:''; ?>"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                   </div>
                   <div class="item">

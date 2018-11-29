@@ -171,16 +171,11 @@
 								<a target="_blank" href="<?php echo base_url('preview');?>">Preview<span class="menu-arrow"></span></a>
 							</li>
 							
-							<li class="submenu">
-								<a href="" class=""><span>Reservation Time</span> <span class="menu-arrow"></span></a>
-								<ul class="list-unstyled" style="display: none;">
-								
-									<li><a href="<?php echo base_url('Reservationtime');?>">Reservation Time</a></li>
-									<li><a href="<?php echo base_url('Reservationtime/lists');?>">Reservation Time List</a></li>
-						
-								</ul>
-							</li>
 							
+							
+							<li class=""> 
+								<a  href="<?php echo base_url('reservationtime');?>">Reservation Time<span class="menu-arrow"></span></a>
+							</li>
 							
 							<li class=""> 
 								<a href="<?php echo base_url('dashboard/logout');?>">Logout</a>

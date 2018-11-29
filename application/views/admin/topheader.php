@@ -46,6 +46,12 @@
 									<input type="text" class="form-control" name="google_link"  placeholder="Enter Google+ Link">
 									</div>
 								</div>
+				<div class="col-md-6">
+               <div class="form-group">
+                  <label>Pinterest link</label>
+                  <input type="text" class="form-control" name="pinterest_link" placeholder="Enter Pinterest Link" >
+               </div>
+            </div>
 							</div>
 							<div class="m-t-20 text-center">
 								<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Upload</button>
@@ -104,7 +110,17 @@
 					}
 				}
             },
-
+             pinterest_link: {
+               validators: {
+   	notEmpty: {
+   		message: 'Pinterest link is required'
+   	},
+   	regexp: {
+   	regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
+   	message: 'Please enter a valid Pinterest Link address. For example www.pinterest.com.'
+   	}
+   }
+           },  
 			google_link: {
                 validators: {
 					notEmpty: {

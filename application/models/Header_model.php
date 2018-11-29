@@ -476,19 +476,13 @@ class Header_model extends CI_Model
 	$this->db->insert('reservation_time',$data);
 	return $this->db->insert_id();	
 	}
-	public function get_reservation_time_list(){
+	
+	public function check_reservation_time_details(){
 	$this->db->select('*')->from('reservation_time');
-	$this->db->where('reservation_time.status !=', 2);
-	return $this->db->get()->result_array();
-	}	
-	public function edit_reservation_time_details($r_t_id){
-	$this->db->select('reservation_time.*')->from('reservation_time');
-	$this->db->where('r_t_id',$r_t_id);
-	return $this->db->get()->row_array();	
+	return $this->db->get()->row_array();
 	}
-	public function update_reservation_time_details($r_t_id,$data){
-	$this->db->where('r_t_id',$r_t_id);
-    return $this->db->update("reservation_time",$data);
+	public function update_reservation_time_data_details($data){
+	return $this->db->update("reservation_time",$data);
 	}
 	
 	

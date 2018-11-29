@@ -93,7 +93,7 @@
                         }
                     }
                 },
-                paragraph: {
+                'paragraph[]': {
                     validators: {
                         notEmpty: {
                             message: 'paragraph is required'

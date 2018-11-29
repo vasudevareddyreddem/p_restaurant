@@ -500,7 +500,11 @@ class Header_model extends CI_Model
 	
 	
 	
-	
+	 public function get_top_details(){
+	$this->db->select('topheader.*')->from('topheader');
+	$this->db->where('status',1);
+	return $this->db->get()->row_array()?1:0;	
+	}
 	
 	
 	

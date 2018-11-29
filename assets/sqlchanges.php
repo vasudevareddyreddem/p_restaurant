@@ -328,3 +328,38 @@ CREATE TABLE `users` (
   `created_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`u_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+
+
+CREATE TABLE `contactus` (
+  `c_id` int(11) NOT NULL AUTO_INCREMENT,
+  `banner` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `phone` varchar(250) DEFAULT NULL,
+  `email_id` varchar(250) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `paragraph` varchar(250) DEFAULT NULL,
+  `facebook_link` varchar(250) DEFAULT NULL,
+  `twitter_link` varchar(250) DEFAULT NULL,
+  `google_link` varchar(250) DEFAULT NULL,
+  `Mondaytime_from` varchar(250) DEFAULT NULL,
+  `Mondaytime_to` varchar(250) DEFAULT NULL,
+  `Tuesdaytime_from` varchar(250) DEFAULT NULL,
+  `Tuesdaytime_to` varchar(250) DEFAULT NULL,
+  `Wednesdaytime_from` varchar(250) DEFAULT NULL,
+  `Wednesdaytime_to` varchar(250) DEFAULT NULL,
+  `Thursdaytime_from` varchar(250) DEFAULT NULL,
+  `Thursdaytime_to` varchar(250) DEFAULT NULL,
+  `Fridaytime_from` varchar(250) DEFAULT NULL,
+  `Fridaytime_to` varchar(250) DEFAULT NULL,
+  `Saturdaytime_from` varchar(250) DEFAULT NULL,
+  `Saturdaytime_to` varchar(250) DEFAULT NULL,
+  `Sundaytime_from` varchar(250) DEFAULT NULL,
+  `Sundaytime_to` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1
+

@@ -364,10 +364,7 @@ class Header_model extends CI_Model
 	}
 	
 	/* Contact Us */
-	public function save_contact_data_details($data){
-	$this->db->insert('contact_data',$data);
-	return $this->db->insert_id();	
-	}
+	
 	public function save_contactus_details($data){
 	$this->db->insert('contactus',$data);
 	return $this->db->insert_id();	

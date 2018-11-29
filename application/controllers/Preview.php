@@ -34,7 +34,7 @@ class Preview extends CI_Controller
 		   $data['menu_list']=$this->Frontend_model->menu_details_list();
 		   $data['servies_list']=$this->Frontend_model->servies_details_list();
 		   $data['daily_special_list']=$this->Frontend_model->daily_special_list();
-		 //echo'<pre>';print_r($data['daily_special_list']);exit;
+		 //echo'<pre>';print_r($data);exit;
 	      $this->load->view('admin/preview-index',$data);
           $this->load->view('html/footer');
  

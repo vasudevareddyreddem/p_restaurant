@@ -31,28 +31,12 @@ class Frontend_model extends CI_Model
 	public function contactus_details_list(){
      $this->db->select('contactus.*')->from('contactus');
     $this->db->where('contactus.status',1);
-	 $return=$this->db->get()->row_array();
-	 //echo '<pre>';print_r($return);exit;
-	 $contact_list=$this->get_contactus_data_list($return['c_id']);
-	 $data=$return;
-	 if(count($contact_list)>0){
-	 $data['contact_list']=isset($contact_list)?$contact_list:'';
-	 }
+	 return $this->db->get()->row_array();
 	 
-	 if(!empty($data)){
-		 return $data;
-	 }
 	}
 	
 	
-	public function get_contactus_data_list($contact_id){
-	 $this->db->select('contact_data.*')->from('contact_data');
-     $this->db->where('contact_data.contact_id',$contact_id);
-     $this->db->where('contact_data.status',1);
-	 return $this->db->get()->result_array();
 	
-	
-	}
 	
 	
 	

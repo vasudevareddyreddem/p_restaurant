@@ -29,6 +29,282 @@
                 </div>
               </div>
             </section>
+			<section class="product-sesction-01 padding-bottom-100 padding-top-100">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="swin-sc swin-sc-title">
+                      <p class="top-title"><span>Our Menu</span></p>
+                      <h3 class="title">Tasty And Good Price</h3>
+                    </div>
+                    <div class="swin-sc swin-sc-product products-01 style-02 woocommerce">
+                      <div class="row">
+                        <div class="col-md-2"></div>
+                        <div data-slide-toshow="5" class="cat-wrapper-02 main-slider col-md-8">
+                          <div class="item">
+                            <div class="cat-icons"><i class="icons swin-icon-pasta"></i>
+                              <h5 class="cat-title">Breakfast</h5>
+                            </div>
+                          </div>
+                          <div class="item">
+                            <div class="cat-icons"><i class="icons swin-icon-fish"></i>
+                              <h5 class="cat-title">Lunch</h5>
+                            </div>
+                          </div>
+                          <div class="item">
+                            <div class="cat-icons"><i class="icons swin-icon-meat"></i></div>
+                            <h5 class="cat-title">Dinner</h5>
+                          </div>
+                          <div class="item">
+                            <div class="cat-icons"><i class="icons swin-icon-ice-cream"></i></div>
+                            <h5 class="cat-title">Desset</h5>
+                          </div>
+                          <div class="item">
+                            <div class="cat-icons"><i class="icons swin-icon-dinner"></i></div>
+                            <h5 class="cat-title">Drink</h5>
+                          </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                      </div>
+                      <div class="row">
+                        <div class="nav-slider">
+                          <div class="tab-content">
+                            <div class="col-md-5 col-sm-12">
+                              <div class="cat-wrapper">
+                                <div class="item"><img src="assets/images/product/pd-cat-dessert.png" alt="" class="img img-responsive img-full"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12">
+                              <div class="products">
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">The Cracker Barrel's Country Boy Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>25.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Uncle Herschel's Favorite </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>45.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Grandpa's Country Fried Breakfast </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>30.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Old Timer's Meat Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Chinese Chicken Bread Spicy Soup</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-content">
+                            <div class="col-md-5 col-sm-12">
+                              <div class="cat-wrapper">
+                                <div class="item"><img src="assets/images/product/pd-cat-lunch.png" alt="" class="img img-responsive img-full"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12">
+                              <div class="products">
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">The Cracker Barrel's Country Boy Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>25.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Grandpa's Country Fried Breakfast </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>30.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Uncle Herschel's Favorite </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>45.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Chinese Chicken Bread Spicy Soup</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Old Timer's Meat Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-content">
+                            <div class="col-md-5 col-sm-12">
+                              <div class="cat-wrapper">
+                                <div class="item"><img src="assets/images/product/pd-cat-dinner.png" alt="" class="img img-responsive img-full"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12">
+                              <div class="products">
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Uncle Herschel's Favorite </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>45.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Old Timer's Meat Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">The Cracker Barrel's Country Boy Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>25.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Grandpa's Country Fried Breakfast </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>30.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Chinese Chicken Bread Spicy Soup</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-content">
+                            <div class="col-md-5 col-sm-12">
+                              <div class="cat-wrapper">
+                                <div class="item"><img src="assets/images/product/pd-cat-dessert.png" alt="" class="img img-responsive img-full"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12">
+                              <div class="products">
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">The Cracker Barrel's Country Boy Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>25.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Grandpa's Country Fried Breakfast </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>30.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Old Timer's Meat Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Uncle Herschel's Favorite </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>45.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Chinese Chicken Bread Spicy Soup</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-content">
+                            <div class="col-md-5 col-sm-12">
+                              <div class="cat-wrapper">
+                                <div class="item"><img src="assets/images/product/pd-cat-lunch.png" alt="" class="img img-responsive img-full"></div>
+                              </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12">
+                              <div class="products">
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Old Timer's Meat Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">The Cracker Barrel's Country Boy Breakfast</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>25.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Grandpa's Country Fried Breakfast </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>30.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Uncle Herschel's Favorite </h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>45.0</span></div>
+                                </div>
+                                <div class="item product-01">
+                                  <div class="item-left">
+                                    <h5 class="title">Chinese Chicken Bread Spicy Soup</h5>
+                                    <div class="des">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </div>
+                                  </div>
+                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span>12.0</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 			<?php if(isset($daily_special_list) && count($daily_special_list)>0){ ?>
             <section class="product-sesction-03-1 padding-top-100 padding-bottom-100"><img src="<?php echo base_url('assets/menu_bar_brief/'.$daily_special_list['banner']); ?>" alt="" class="img-responsive img-decorate">
               <div class="container">

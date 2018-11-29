@@ -8,8 +8,10 @@
                       <h3 class="title">Subcribe Us Now</h3>
                       <div class="des">Get more news and delicious dishes everyday from us</div>
                     </div>
-                    <form class="widget-newsletter">
-                      <input placeholder="Email" class="form-control"><span class="submit"><i class="fa fa-paper-plane"></i></span>
+                    <form class="widget-newsletter" action="<?php echo base_url('contactus/subscribe'); ?>" method="post">
+                      <div class="row col-md-12"><input type="email" placeholder="Email" name="email" class="form-control ">
+					  <button type="submit" name="submit" class="">Submit</button>
+					  </div>
                     </form>
                   </div>
                 </div>
@@ -26,10 +28,10 @@
                       <div class="swin-wget swin-wget-about">
                         <div class="clearfix"><a class="wget-logo"><img style="height:100px;width:auto;" src="<?php echo base_url();?>assets/images/logo.png" alt="" class="img img-responsive"></a>
                           <ul class="socials socials-about list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['facebook_link'])?$contactus['facebook_link']:''; ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['twitter_link'])?$contactus['twitter_link']:''; ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['pinterest_link'])?$contactus['pinterest_link']:''; ?>"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['google_link'])?$contactus['google_link']:''; ?>"><i class="fa fa-google-plus"></i></a></li>
                           </ul>
                         </div>
                         <div class="wget-about-content">
@@ -51,7 +53,6 @@
                           <div class="email-info">
                             <div class="info-icon"><i class="fa fa-envelope"></i></div>
                             <div class="info-content">
-                              <p><?php echo $contactus['email'];?></p>
                               <p><?php echo $contactus['email_id'];?></p>
                             </div>
                           </div>
@@ -59,7 +60,7 @@
                       </div>
                     </div>
                   </div>
-                </div>Close
+                </div>
 				
                 <div class="col-lg-4">
                   <div class="ft-fixed-area">

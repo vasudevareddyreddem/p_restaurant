@@ -159,15 +159,43 @@ class Frontend_model extends CI_Model
 	 return $this->db->get()->result_array();
 	
 	}
-	
-	
-	
-	
-	
 	public function topheader_details_list(){
 	$this->db->select('topheader.*')->from('topheader');
     $this->db->where('topheader.status',1);
 	return $this->db->get()->row_array();
+	}
+	
+	/* menu order list purpose*/
+	public function menu_item_details_list(){
+	$this->db->select('menu_brief_all_details.food_type,menu_brief_all_details.m_b_a_d_id')->from('menu_brief');
+	$this->db->join('menu_brief_all_details', 'menu_brief_all_details.menu_brief_id = menu_brief.m_b_id', 'left');
+	$this->db->where('menu_brief.menu_type','Menu');
+	$this->db->group_by('menu_brief_all_details.food_type');
+    $this->db->where('menu_brief.status',1);
+	$return=$this->db->get()->result_array();
+	foreach($return as $list){
+		$item_list=$this->get_menu_item_list($list['food_type']);
+		$img_list=$this->get_menu_images_list($list['food_type']);
+		$data[$list['m_b_a_d_id']]=$list;
+		$data[$list['m_b_a_d_id']]['food_img_list']=isset($img_list)?$img_list:'';
+		$data[$list['m_b_a_d_id']]['item_list']=isset($item_list)?$item_list:'';
+	}
+		if(!empty($data)){
+			return $data;
+		}
+	}
+	
+	public  function get_menu_item_list($food_type){
+		$this->db->select('image,org_pic,food_type,name,description,price')->from('menu_brief_all_details');
+		$this->db->where('menu_brief_all_details.food_type',$food_type);
+		$this->db->where('menu_brief_all_details.status',1);
+		return $this->db->get()->result_array();
+	}
+	public  function get_menu_images_list($food_type){
+		$this->db->select('image,org_pic')->from('menu_brief_all_details');
+		$this->db->where('menu_brief_all_details.food_type',$food_type);
+		$this->db->where('menu_brief_all_details.status',1);
+		return $this->db->get()->result_array();
 	}
 	
 	

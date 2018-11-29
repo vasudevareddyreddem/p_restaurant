@@ -323,7 +323,7 @@
 						message: 'Phone Number is required'
 					},
 					regexp: {
-					regexp:  /^[0-9]{10}$/,
+					regexp:  /^[0-9._-]{10,14}$/,
 					message:'Phone Number must be 10 digits'
 					}
 				

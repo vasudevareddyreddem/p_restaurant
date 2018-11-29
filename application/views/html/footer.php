@@ -59,7 +59,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>Close
 				
                 <div class="col-lg-4">
                   <div class="ft-fixed-area">
@@ -68,31 +68,126 @@
                         <h3 class="res-title">Open Hour</h3>
                         <div class="res-date-time">
                          
-						  <?Php foreach($opening_hours['contact_list'] as $list){ ?>
                           <div class="res-date-time-item">
                             <div class="res-date">
                               <div class="res-date-item">
                                 <div class="res-date-text">
-								
-                                  <p><?php echo isset($list['day'])?$list['day']:''; ?></p>
-								  
-								
-                                </div>
-								
-                                <div class="res-date-dot">.......................................</div>
+									<p>Monday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
 								
                               </div>
                             </div>
                             <div class="res-time">
                               <div class="res-time-item">
-							 
-                                <p><?php echo isset($list['time_from'])?$list['time_from']:''; ?>-<?php echo isset($list['time_to'])?$list['time_to']:''; ?></p>
+								<p><?php echo isset($contactus['Mondaytime_from'])?$contactus['Mondaytime_from']:''; ?>-<?php echo isset($contactus['Mondaytime_to'])?$contactus['Mondaytime_to']:''; ?></p>
+								</div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div> 
+						  <div class="res-date-time-item">
+                            <div class="res-date">
+                              <div class="res-date-item">
+                                <div class="res-date-text">
+									<p>Tuesday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
 								
                               </div>
                             </div>
+                            <div class="res-time">
+                              <div class="res-time-item">
+								<p><?php echo isset($contactus['Tuesdaytime_from'])?$contactus['Tuesdaytime_from']:''; ?>-<?php echo isset($contactus['Tuesdaytime_to'])?$contactus['Tuesdaytime_to']:''; ?></p>
+								</div>
+                            </div>
                             <div class="clearfix"></div>
                           </div>
-						  <?php }?>
+						  <div class="res-date-time-item">
+                            <div class="res-date">
+                              <div class="res-date-item">
+                                <div class="res-date-text">
+									<p>Wednesday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
+								
+                              </div>
+                            </div>
+                            <div class="res-time">
+                              <div class="res-time-item">
+								<p><?php echo isset($contactus['Wednesdaytime_from'])?$contactus['Wednesdaytime_from']:''; ?>-<?php echo isset($contactus['Wednesdaytime_to'])?$contactus['Wednesdaytime_to']:''; ?></p>
+								</div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div> 
+						  <div class="res-date-time-item">
+                            <div class="res-date">
+                              <div class="res-date-item">
+                                <div class="res-date-text">
+									<p>Thursday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
+								
+                              </div>
+                            </div>
+                            <div class="res-time">
+                              <div class="res-time-item">
+								<p><?php echo isset($contactus['Thursdaytime_from'])?$contactus['Thursdaytime_from']:''; ?>-<?php echo isset($contactus['Thursdaytime_to'])?$contactus['Thursdaytime_to']:''; ?></p>
+								</div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+						  <div class="res-date-time-item">
+                            <div class="res-date">
+                              <div class="res-date-item">
+                                <div class="res-date-text">
+									<p>Friday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
+								
+                              </div>
+                            </div>
+                            <div class="res-time">
+                              <div class="res-time-item">
+								<p><?php echo isset($contactus['Fridaytime_from'])?$contactus['Fridaytime_from']:''; ?>-<?php echo isset($contactus['Fridaytime_to'])?$contactus['Fridaytime_to']:''; ?></p>
+								</div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+						  <div class="res-date-time-item">
+                            <div class="res-date">
+                              <div class="res-date-item">
+                                <div class="res-date-text">
+									<p>Saturday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
+								
+                              </div>
+                            </div>
+                            <div class="res-time">
+                              <div class="res-time-item">
+								<p><?php echo isset($contactus['Saturdaytime_from'])?$contactus['Saturdaytime_from']:''; ?>-<?php echo isset($contactus['Saturdaytime_to'])?$contactus['Saturdaytime_to']:''; ?></p>
+								</div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+						  <div class="res-date-time-item">
+                            <div class="res-date">
+                              <div class="res-date-item">
+                                <div class="res-date-text">
+									<p>Sunday</p>
+								</div>
+								<div class="res-date-dot">.......................................</div>
+								
+                              </div>
+                            </div>
+                            <div class="res-time">
+                              <div class="res-time-item">
+								<p><?php echo isset($contactus['Sundaytime_from'])?$contactus['Sundaytime_from']:''; ?>-<?php echo isset($contactus['Sundaytime_to'])?$contactus['Sundaytime_to']:''; ?></p>
+								</div>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+						  
 						  
                         </div>
                         <h3 class="res-title">Reservation Numbers</h3>

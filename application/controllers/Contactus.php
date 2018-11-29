@@ -18,10 +18,10 @@ class Contactus extends In_frontend {
 		{	
          $admindetails=$this->session->userdata('restaurantdetails');
           
-		 
-	      $this->load->view('admin/contactus');
+		 $data['contact_details']=$this->Header_model->check_contact_details();
+	      $this->load->view('admin/contactus',$data);
 	      $this->load->view('admin/footer');
-	    
+	    //echo '<pre>';print_r($data);exit;
          }else{
 		 $this->session->set_flashdata('error',"Please login and continue");
 		 redirect('');  
@@ -32,23 +32,16 @@ class Contactus extends In_frontend {
 	if($this->session->userdata('restaurantdetails'))
 		{	
          $admindetails=$this->session->userdata('restaurantdetails');
-	     $post=$this->input->post();	
-		//echo'<pre>';print_r($post);
-		
-	
-	
-	
-		
+	     $post=$this->input->post();
+		 $details=$this->Header_model->check_contact_details();
 		if($_FILES['banner']['name']!=''){
 					$images=$_FILES['banner']['name'];
-					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/adminprofilepic/" . $_FILES['banner']['name']);
+					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/contactus/" . $_FILES['banner']['name']);
 
 					}else{
-					$images='';
+					$images=$details['banner'];
 					}
 					
-		 $contact_delete=$this->Header_model->update_contact_data_details();				
-		 $contact_data_delete=$this->Header_model->update_contact_data_data_details();				
 	 $save_data=array(
 	 'banner'=>$images,
 	  'email'=>isset($post['email'])?$post['email']:'',
@@ -59,136 +52,47 @@ class Contactus extends In_frontend {
 	  'facebook_link'=>isset($post['facebook_link'])?$post['facebook_link']:'',
 	  'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
 	  'google_link'=>isset($post['google_link'])?$post['google_link']:'',
+	  'Mondaytime_from'=>isset($post['Mondaytime_from'])?$post['Mondaytime_from']:'',
+	  'Mondaytime_to'=>isset($post['Mondaytime_to'])?$post['Mondaytime_to']:'',
+	  'Tuesdaytime_from'=>isset($post['Tuesdaytime_from'])?$post['Tuesdaytime_from']:'',
+	  'Tuesdaytime_to'=>isset($post['Tuesdaytime_to'])?$post['Tuesdaytime_to']:'',
+	  'Wednesdaytime_from'=>isset($post['Wednesdaytime_from'])?$post['Wednesdaytime_from']:'',
+	  'Wednesdaytime_to'=>isset($post['Wednesdaytime_to'])?$post['Wednesdaytime_to']:'',
+	  'Thursdaytime_from'=>isset($post['Thursdaytime_from'])?$post['Thursdaytime_from']:'',
+	  'Thursdaytime_to'=>isset($post['Thursdaytime_to'])?$post['Thursdaytime_to']:'',
+	  'Fridaytime_from'=>isset($post['Fridaytime_from'])?$post['Fridaytime_from']:'',
+	  'Fridaytime_to'=>isset($post['Fridaytime_to'])?$post['Fridaytime_to']:'',
+	  'Saturdaytime_from'=>isset($post['Saturdaytime_from'])?$post['Saturdaytime_from']:'',
+	  'Saturdaytime_to'=>isset($post['Saturdaytime_to'])?$post['Saturdaytime_to']:'',
+	  'Sundaytime_from'=>isset($post['Sundaytime_from'])?$post['Sundaytime_from']:'',
+	  'Sundaytime_to'=>isset($post['Sundaytime_to'])?$post['Sundaytime_to']:'',
       'status'=>1,
       'created_at'=>date('Y-m-d H:i:s'),
       'updated_at'=>date('Y-m-d H:i:s'),
       'created_by'=>$admindetails['u_id'],
       );
 	 //echo '<pre>';print_r($save_data);exit;
-    $save=$this->Header_model->save_contactus_details($save_data);
-		 //$aa=array_unique($post['day'],$post['time_from'],$post['time_to']);
-	 
-	// echo '<pre>';print_r($aa);exit;
-		      if(count($save)>0){
-				 if(isset($post['day']) && count($post['day'])>0){ 
-				 $cnt=0;foreach($post['day'] as $list){ 
-					  $add_data=array(
-					  'contact_id'=>isset($save)?$save:'',
-					  'day'=>$list,
-					  'time_from'=>$post['time_from'][$cnt],
-					  'time_to'=>$post['time_to'][$cnt],
-					  'status'=>1,
-					  'created_at'=>date('Y-m-d H:i:s'),
-					  'updated_at'=>date('Y-m-d H:i:s'),
-					  'created_by'=>$admindetails['u_id'],
-					  );
-	   //echo '<pre>';print_r($add_data);
-    $this->Header_model->save_contact_data_details($add_data);	
-					   
-
-				        $cnt++;}
-				 }
-				 
-				 
-				 
-				 //exit;
-		 
-	 
-	  //echo '<pre>';print_r($save);exit;
-		      if(count($save)>0){
-					$this->session->set_flashdata('success',"contactus details successfully added");	
-					redirect('contactus/index');	
-					}else{
-						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('contactus/index');
-					}
+		$check=$this->Header_model->check_contact_details();
+		if(count($check)>0){
+			$save=$this->Header_model->update_contact_data_details($save_data);
+		}else{
+			$save=$this->Header_model->save_contactus_details($save_data);
+		}
+		
+		if(count($save)>0){
+				$this->session->set_flashdata('success',"contactus details successfully added");	
+				redirect('contactus/index');
+			}else{
+				$this->session->set_flashdata('success',"contactus details successfully added");	
+				redirect('contactus/index');;  
+			}
 	
-	               }else{
-		           $this->session->set_flashdata('error',"Please login and continue");
-		          redirect('');  
-	          }
-	
-  }		
+		}		
 	
 	
 	}	
    
- public function backup_addpost(){
-	if($this->session->userdata('restaurantdetails'))
-		{	
-         $admindetails=$this->session->userdata('restaurantdetails');
-	     $post=$this->input->post();	
-		//echo'<pre>';print_r($post);exit;
-		
 	
-	
-	 $cnt=1;foreach($post['day'] as $key => $val) {
-	  $add_data=array(
-	  'emp_id'=>isset($admindetails['u_id'])?$admindetails['u_id']:'',
-	  'day'=>$val,
-	  'time_from'=>$post['time_from'][$key],
-	  'time_to'=>$post['time_to'][$key],
-	  );
-	   //echo '<pre>';print_r($add_data);
-      $save=$this->Header_model->save_contact_details($add_data);	
-
-	 
-	 
-      // here your insert query
-     $cnt++;}
-
-	// exit;
-	
-	$str_Names=implode(",", $post['day']);
-	
-    $star=implode(",", $post['time_from']);  
-	
-	$str=implode(",", $post['time_to']);	
-		
-		if($_FILES['banner']['name']!=''){
-					$images=$_FILES['banner']['name'];
-					move_uploaded_file($_FILES['banner']['tmp_name'], "assets/adminprofilepic/" . $_FILES['banner']['name']);
-
-					}else{
-					$images='';
-					}
-	 $save_data=array(
-	 'banner'=>$images,
-	  'email'=>isset($post['email'])?$post['email']:'',
-	  'phone'=>isset($post['phone'])?$post['phone']:'',
-	  'email_id'=>isset($post['email_id'])?$post['email_id']:'',
-	  'address'=>isset($post['address'])?$post['address']:'',
-	  'facebook_link'=>isset($post['facebook_link'])?$post['facebook_link']:'',
-	  'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
-	  'google_link'=>isset($post['google_link'])?$post['google_link']:'',
-	  'day'=>$str_Names,
-	  'time_from'=>$star,
-	  'time_to'=>$str,
-      'status'=>1,
-      'created_at'=>date('Y-m-d H:i:s'),
-      'updated_at'=>date('Y-m-d H:i:s'),
-      'created_by'=>$admindetails['u_id'],
-      );
-	 //echo '<pre>';print_r($save_data);exit;
-    $save=$this->Header_model->save_contactus_details($save_data);
-		 
-		 
-	 
-	  //echo '<pre>';print_r($save);exit;
-		      if(count($save)>0){
-					$this->session->set_flashdata('success',"contactus details successfully added");	
-					redirect('contactus/index');	
-					}else{
-						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('contactus/index');
-					}
-	
-	               }else{
-		           $this->session->set_flashdata('error',"Please login and continue");
-		          redirect('');  
-	          }
-	
-  }		
 	
    
    

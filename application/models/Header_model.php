@@ -372,14 +372,16 @@ class Header_model extends CI_Model
 	$this->db->insert('contactus',$data);
 	return $this->db->insert_id();	
 	}
-	public function update_contact_data_details(){
-		$this->db->set('status',2);
-		$this->db->update("contactus");
+	public function update_contact_data_details($data){
+		
+		return $this->db->update("contactus",$data);
 	}
-	public function update_contact_data_data_details(){
-	$this->db->set('status',2);
-    $this->db->update("contact_data");
+	
+	public  function check_contact_details(){
+		$this->db->select('*')->from('contactus');
+	    return $this->db->get()->row_array();
 	}
+	
 	
 	
 	/*   menu brief */

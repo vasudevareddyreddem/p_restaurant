@@ -41,30 +41,81 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr id='addr0'>
+											<tr>
 												<td class="form-group">
-													<select class="form-control" name="day[]">
-													<option value="">Select Day</option>
-													<option value="Monday">Monday</option>
-													<option value="Tuesday">Tuesday</option>
-													<option value="Wednesday">Wednesday</option>
-													<option value="Thursday">Thursday</option>
-													<option value="Friday">Friday</option>
-													<option value="Saturday">Saturday</option>
-													<option value="Sunday">Sunday</option>
-												  </select>
+												<input type="text" name="Mondayday"  placeholder='Monday' value="Monday" class="form-control" value="<?php echo isset($contact_details['Mondayday'])?$contact_details['Mondayday']:''; ?>"/>
 												</td>
 												<td class="form-group">
-												<input type="time" name="time_from[]"  placeholder='Enter Name' class="form-control"/>
+												<input type="time" name="Mondaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Mondaytime_from'])?$contact_details['Mondaytime_from']:''; ?>"/>
 												</td>
 												<td class="form-group">
-												<input type="time" name="time_to[]"  placeholder='Enter Name' class="form-control"/>
+												<input type="time" name="Mondaytime_to"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Mondaytime_to'])?$contact_details['Mondaytime_to']:''; ?>"/>
 												</td>
 											</tr>
-											<tr id='addr1'></tr>
+											<tr>
+												<td class="form-group">
+												<input type="text" name="Tuesdayday"  placeholder='Tuesday' value="Tuesday" class="form-control" value="<?php echo isset($contact_details['Tuesdayday'])?$contact_details['Tuesdayday']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Tuesdaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Tuesdaytime_from'])?$contact_details['Tuesdaytime_from']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Tuesdaytime_to"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Tuesdaytime_to'])?$contact_details['Tuesdaytime_to']:''; ?>"/>
+												</td>
+											</tr>
+											<tr>
+												<td class="form-group">
+												<input type="text" name="Wednesdayday"  placeholder='Wednesday' value="Wednesday" class="form-control" value="<?php echo isset($contact_details['Wednesdayday'])?$contact_details['Wednesdayday']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Wednesdaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Wednesdaytime_from'])?$contact_details['Wednesdaytime_from']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Wednesdaytime_to"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Wednesdaytime_to'])?$contact_details['Wednesdaytime_to']:''; ?>"/>
+												</td>
+											</tr><tr>
+												<td class="form-group">
+												<input type="text" name="Thursdayday"  placeholder='Thursday' value="Thursday" class="form-control" value="<?php echo isset($contact_details['Thursdayday'])?$contact_details['Thursdayday']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Thursdaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Thursdaytime_from'])?$contact_details['Thursdaytime_from']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Thursdaytime_to"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Thursdaytime_to'])?$contact_details['Thursdaytime_to']:''; ?>"/>
+												</td>
+											</tr><tr>
+												<td class="form-group">
+												<input type="text" name="Fridayday"  placeholder='Friday' value="Friday" class="form-control" value="<?php echo isset($contact_details['Fridayday'])?$contact_details['Fridayday']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Fridaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Fridaytime_from'])?$contact_details['Fridaytime_from']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Fridaytime_to"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Fridaytime_to'])?$contact_details['Fridaytime_to']:''; ?>"/>
+												</td>
+											</tr><tr>
+												<td class="form-group">
+												<input type="text" name="Saturdayday"  placeholder='Saturday' value="Saturday" class="form-control" value="<?php echo isset($contact_details['Saturdayday'])?$contact_details['Saturdayday']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Saturdaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Saturdaytime_from'])?$contact_details['Saturdaytime_from']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Saturdaytime_to"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Saturdaytime_to'])?$contact_details['Saturdaytime_to']:''; ?>"/>
+												</td>
+											</tr><tr>
+												<td class="form-group">
+												<input type="text" name="Sundayday"  placeholder='Sunday' value="Sunday" class="form-control" value="<?php echo isset($contact_details['Sundayday'])?$contact_details['Sundayday']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Sundaytime_from"  placeholder='Enter Name' class="form-control" value="<?php echo isset($contact_details['Sundaytime_from'])?$contact_details['Sundaytime_from']:''; ?>"/>
+												</td>
+												<td class="form-group">
+												<input type="time" name="Sundaytime_to"  placeholder='Enter Name' class="form-control "  value="<?php echo isset($contact_details['Sundaytime_to'])?$contact_details['Sundaytime_to']:''; ?>"/>
+												</td>
+											</tr>
 										</tbody>
 									</table>	
-									<a id="add_row" class="btn btn-default pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
 								</div>
 										
 										
@@ -78,7 +129,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Email </label>
-											<input type="text" class="form-control" name="email" placeholder="Enter Email id">
+											<input type="text" class="form-control" name="email" placeholder="Enter Email id" value="<?php echo isset($contact_details['email'])?$contact_details['email']:''; ?>">
 										</div>
 										
 										
@@ -91,7 +142,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Phone Number</label>
-											<input type="Number" class="form-control" name="phone"  placeholder="Enter Phone Number">
+											<input type="text" class="form-control" name="phone"  placeholder="Enter Phone Number" value="<?php echo isset($contact_details['phone'])?$contact_details['phone']:''; ?>">
 										</div>
 										
 										
@@ -99,7 +150,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Email</label>
-											<input type="text" class="form-control" name="email_id" placeholder="Enter Email" name="lastName">
+											<input type="text" class="form-control" name="email_id" placeholder="Enter Email" name="lastName" value="<?php echo isset($contact_details['email_id'])?$contact_details['email_id']:''; ?>">
 										</div>
 										
 										
@@ -109,14 +160,14 @@
 							<div class="form-group">
 								<label>Paragraph</label>
 								<!--<input type="text" class="form-control" placeholder="Enter Title" value="Plot No. 177, Sri Vani Nilayam, Hyderabad.">-->
-								<textarea class="form-control"  name="paragraph" rows="5" placeholder="Enter here..."></textarea>
+								<textarea class="form-control"  name="paragraph" rows="5" placeholder="Enter here..."><?php echo isset($contact_details['paragraph'])?$contact_details['paragraph']:''; ?></textarea>
 							</div>
 						</div>
 					</div>
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Address</label>
-											<textarea class="form-control" name="address" rows="5" placeholder="Enter Address"></textarea>
+											<textarea class="form-control" name="address" rows="5" placeholder="Enter Address"><?php echo isset($contact_details['address'])?$contact_details['address']:''; ?></textarea>
 										</div>
 										
 										
@@ -130,7 +181,7 @@
 								<div class="col-md-6">
 										<div class="form-group">
 											<label>facebook Link</label>
-											<input type="text" class="form-control" name="facebook_link"  placeholder="Enter facebook Link">
+											<input type="text" class="form-control" name="facebook_link"  placeholder="Enter facebook Link" value="<?php echo isset($contact_details['facebook_link'])?$contact_details['facebook_link']:''; ?>">
 										</div>
 										
 										
@@ -138,7 +189,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Twitter Link</label>
-											<input type="text" class="form-control"  name="twitter_link" placeholder="Enter Twitter Link">
+											<input type="text" class="form-control"  name="twitter_link" placeholder="Enter Twitter Link" value="<?php echo isset($contact_details['twitter_link'])?$contact_details['twitter_link']:''; ?>">
 										</div>
 										
 										
@@ -152,7 +203,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Google+ Link</label>
-											<input type="text" class="form-control" name="google_link" placeholder="Enter Google+ Link">
+											<input type="text" class="form-control" name="google_link" placeholder="Enter Google+ Link" value="<?php echo isset($contact_details['google_link'])?$contact_details['google_link']:''; ?>">
 										</div>
 										
 										
@@ -177,8 +228,9 @@
      $(document).ready(function(){
       var i=1;
      $("#add_row").click(function(){
+		 if(i<=6){
       $('#addr'+i).html("<td><select  name='day[]' id='name"+i+"' class='form-control'  ><option>Select Day</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select> </td><td><input  name='time_from[]' id='mail"+i+"' type='time'   class='form-control input-md'></td><td><input  name='time_to[]' id='mail"+i+"' type='time'   class='form-control input-md'></td>");
-
+		 }
       $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
       i++; 
   });
@@ -285,7 +337,7 @@
 					},
 					regexp: {
 					regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example www.facebook.com	.'
+					message: 'Please enter a valid facebook Link address. For example www.facebook.com	.'
 					}
 				}
             },
@@ -297,7 +349,7 @@
 					},
 			        regexp: {
 					regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example www.twitter.com.'
+					message: 'Please enter a valid Twitter Link address. For example www.twitter.com.'
 					}
 				}
             },
@@ -309,7 +361,7 @@
 					},
 				    regexp: {
 					regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example www.google.com.'
+					message: 'Please enter a valid Google+ Link address. For example www.google.com.'
 					}
 				}
             }

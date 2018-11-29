@@ -8,8 +8,10 @@
                       <h3 class="title">Subcribe Us Now</h3>
                       <div class="des">Get more news and delicious dishes everyday from us</div>
                     </div>
-                    <form class="widget-newsletter">
-                      <input placeholder="Email" class="form-control"><span class="submit"><i class="fa fa-paper-plane"></i></span>
+                    <form class="widget-newsletter" action="<?php echo base_url('contactus/subscribe'); ?>" method="post">
+                      <div class="row col-md-12"><input type="email" placeholder="Email" name="email" class="form-control ">
+					  <button type="submit" name="submit" class="">Submit</button>
+					  </div>
                     </form>
                   </div>
                 </div>
@@ -51,7 +53,6 @@
                           <div class="email-info">
                             <div class="info-icon"><i class="fa fa-envelope"></i></div>
                             <div class="info-content">
-                              <p><?php echo $contactus['email'];?></p>
                               <p><?php echo $contactus['email_id'];?></p>
                             </div>
                           </div>

@@ -8,26 +8,12 @@ class Contactus extends In_frontend {
 	
 	public function __construct() 
 	{
-		parent::__construct();	
-		
+		parent::__construct();
+			$this->load->library('user_agent');		
 		}
 		
 	
-	public function index(){
-    if($this->session->userdata('restaurantdetails'))
-		{	
-         $admindetails=$this->session->userdata('restaurantdetails');
-          
-		 $data['contact_details']=$this->Header_model->check_contact_details();
-	      $this->load->view('admin/contactus',$data);
-	      $this->load->view('admin/footer');
-	    //echo '<pre>';print_r($data);exit;
-         }else{
-		 $this->session->set_flashdata('error',"Please login and continue");
-		 redirect('');  
-	   }
-}
-	
+		
 	public function addpost(){
 	if($this->session->userdata('restaurantdetails'))
 		{	
@@ -49,6 +35,7 @@ class Contactus extends In_frontend {
 	  'email_id'=>isset($post['email_id'])?$post['email_id']:'',
 	  'address'=>isset($post['address'])?$post['address']:'',
 	  'paragraph'=>isset($post['paragraph'])?$post['paragraph']:'',
+	  'iframe_address'=>isset($post['iframe_address'])?$post['iframe_address']:'',
 	  'facebook_link'=>isset($post['facebook_link'])?$post['facebook_link']:'',
 	  'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
 	  'google_link'=>isset($post['google_link'])?$post['google_link']:'',
@@ -91,9 +78,68 @@ class Contactus extends In_frontend {
 		}		
 	
 	
-	}	
-   
-	
+	}
+
+public  function contactpost(){
+	$post=$this->input->post();
+		//echo '<pre>';print_r($post);exit;
+		$addcontact=array(
+				'name'=>isset($post['name'])?$post['name']:'',
+				'email'=>isset($post['email'])?$post['email']:'',
+				'phone'=>isset($post['phone'])?$post['phone']:'',
+				'message'=>isset($post['message'])?$post['message']:'',
+				'create_at'=>date('Y-m-d H:i:s'),
+				);
+				$save=$this->Header_model->save_contactus($addcontact);
+				if(count($save)>0){
+						$details=$this->Header_model->check_contact_details();
+						$this->load->library('email');
+						$this->load->library('email');
+							$this->email->set_newline("\r\n");
+							$this->email->set_mailtype("html");
+						$this->email->from($post['email']);
+						$this->email->to($details['email']);
+						$this->email->subject('Contact us - Request');
+						//$body = $this->load->view('email/contactus.php',$data,true);
+						//$html = $this->load->view('email/orderconfirmation.php', $data, true); 
+
+						$msg='Name:'.$post['name'].'<br> Email :'.$post['email'].'<br> Phone  number :'.$post['phone'].'<br> Message :'.$post['message'];
+						$this->email->message($msg);
+						//echo $body;exit;
+						$this->email->send();
+						
+						//echo "test";exit;
+						$this->session->set_flashdata('success',"Your message was successfully sent.");
+						redirect($this->agent->referrer());
+				}else{
+					$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+					redirect($this->agent->referrer());
+			}
+}
+public  function subscribe(){
+	$post=$this->input->post();
+		//echo '<pre>';print_r($post);exit;
+		$addcontact=array(
+				'email'=>isset($post['email'])?$post['email']:'',
+				'create_at'=>date('Y-m-d H:i:s'),
+				);
+				$check=$this->Header_model->check_email_subscribe($post['email']);
+				if(count($check)>0){
+					   $this->session->set_flashdata('error',"You are already subscribed ");
+						redirect($this->agent->referrer());
+					
+				}else{
+					$save=$this->Header_model->save_subscribe($addcontact);
+					if(count($save)>0){
+					
+							$this->session->set_flashdata('success',"You have been successfully subscribed ");
+							redirect($this->agent->referrer());
+					}else{
+						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+						redirect($this->agent->referrer());
+					}
+				}
+}
 	
    
    

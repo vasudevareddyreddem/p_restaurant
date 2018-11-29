@@ -17,17 +17,17 @@
                     </div>
                     <div class="reservation-form style-02">
                       <div class="swin-sc swin-sc-contact-form light mtl style-full">
-                        <form>
+                        <form  method="post" action="<?php echo base_url('contactus/contactpost'); ?>">
                           <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                              <input type="text" placeholder="Username" class="form-control">
+                              <input type="text" placeholder="Name" name="name" class="form-control" required>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                              <input type="text" placeholder="Email" class="form-control">
+                              <input type="email" placeholder="Email" name="email" class="form-control" required>
                             </div>
                           </div>
                           <div class="form-group">
@@ -35,14 +35,14 @@
                               <div class="input-group-addon">
                                 <div class="fa fa-phone"></div>
                               </div>
-                              <input type="text" placeholder="Phone" class="form-control">
+                              <input type="text" placeholder="Phone" name="phone" class="form-control" required>
                             </div>
                           </div>
                           <div class="form-group">
-                            <textarea placeholder="Message" class="form-control"></textarea>
+                            <textarea placeholder="Message" name="message" class="form-control" required></textarea>
                           </div>
                           <div class="form-group">
-                            <div class="swin-btn-wrap"><a href="#" class="swin-btn center form-submit"><span>Send</span></a></div>
+                            <div class="swin-btn-wrap"><button type="submit" name="submit" class="swin-btn center form-submit"><span>Send</span></button></div>
                           </div>
                         </form>
                       </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="media-body">
                           <h4 class="media-heading title">Restaurent </h4>
-                          <div class="description"><?php echo $contactus['address']; ?></div>
+                          <div class="description"><?php echo isset($contactus['address'])?$contactus['address']:''; ?></div>
                         </div>
                       </div>
                     
@@ -69,7 +69,7 @@
                         </div>
                         <div class="media-body">
                           <h4 class="media-heading title">Phone Number</h4>
-                          <div class="description"><?php echo $contactus['phone']; ?></div>
+                          <div class="description"><?php echo isset($contactus['phone'])?$contactus['phone']:''; ?></div>
                         </div>
                       </div>
                       <div class="media item">
@@ -79,8 +79,7 @@
                         <div class="media-body">
                           <h4 class="media-heading title">Mail</h4>
                           <div class="description">
-                            <p><?php echo $contactus['email']; ?></p>
-                            <p><?php echo $contactus['email_id']; ?></p>
+                            <p><?php echo isset($contactus['email_id'])?$contactus['email_id']:''; ?></p>
                           </div>
                         </div>
                       </div>
@@ -91,7 +90,7 @@
             </section>
             <section class="map-section padding-bottom-100">
               <div class="container">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951.3161068305509!2d78.38797423869858!3d17.49488629216747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f4f553e453%3A0x912891756062ff71!2sSri+Vani+Nilayam%2C+Sardar+Patel+Nagar%2C+Bhagat+Singh+Nagar%2C+Kukatpally+Housing+Board+Colony%2C+Kukatpally%2C+Hyderabad%2C+Telangana+500085!5e0!3m2!1sen!2sin!4v1515073781683" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+			  <?php echo isset($contactus['iframe_address'])?$contactus['iframe_address']:''; ?>
               </div>
             </section>
           </div>

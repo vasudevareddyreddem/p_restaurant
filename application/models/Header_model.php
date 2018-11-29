@@ -454,6 +454,22 @@ class Header_model extends CI_Model
 	 $this->db->where('status',1);
 	 return $this->db->get()->row_array();	
 	}
+	/* save contactus post */
+	public  function save_contactus($data){
+		$this->db->insert('contactus_post',$data);
+		return $this->db->insert_id();
+		
+	}
+	public  function save_subscribe($data){
+		$this->db->insert('subscribe',$data);
+		return $this->db->insert_id();
+	}
+	
+	public  function check_email_subscribe($email){
+		$this->db->select('*')->from('subscribe');
+	    $this->db->where('email',$email);
+	   return $this->db->get()->row_array();
+	}
 	
 	
 	

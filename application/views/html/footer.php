@@ -26,10 +26,10 @@
                       <div class="swin-wget swin-wget-about">
                         <div class="clearfix"><a class="wget-logo"><img style="height:100px;width:auto;" src="<?php echo base_url();?>assets/images/logo.png" alt="" class="img img-responsive"></a>
                           <ul class="socials socials-about list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['facebook_link'])?$contactus['facebook_link']:''; ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['twitter_link'])?$contactus['twitter_link']:''; ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['pinterest_link'])?$contactus['pinterest_link']:''; ?>"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a target="_blank" href="http://<?php echo isset($contactus['google_link'])?$contactus['google_link']:''; ?>"><i class="fa fa-google-plus"></i></a></li>
                           </ul>
                         </div>
                         <div class="wget-about-content">
@@ -59,7 +59,7 @@
                       </div>
                     </div>
                   </div>
-                </div>Close
+                </div>
 				
                 <div class="col-lg-4">
                   <div class="ft-fixed-area">

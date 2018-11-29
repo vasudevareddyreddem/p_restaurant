@@ -52,6 +52,7 @@ class Contactus extends In_frontend {
 	  'facebook_link'=>isset($post['facebook_link'])?$post['facebook_link']:'',
 	  'twitter_link'=>isset($post['twitter_link'])?$post['twitter_link']:'',
 	  'google_link'=>isset($post['google_link'])?$post['google_link']:'',
+	  'pinterest_link'=>isset($post['pinterest_link'])?$post['pinterest_link']:'',
 	  'Mondaytime_from'=>isset($post['Mondaytime_from'])?$post['Mondaytime_from']:'',
 	  'Mondaytime_to'=>isset($post['Mondaytime_to'])?$post['Mondaytime_to']:'',
 	  'Tuesdaytime_from'=>isset($post['Tuesdaytime_from'])?$post['Tuesdaytime_from']:'',

@@ -86,11 +86,11 @@
            facebook_link: {
                 validators: {
 					notEmpty: {
-						message: 'facebook link is required'
+						message: 'Facebook link is required'
 					},
 					regexp: {
 					regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example www.facebook.com	.'
+					message: 'Please enter a valid Facebook link. For example www.facebook.com	.'
 					}
 				}
             },
@@ -102,7 +102,7 @@
 					},
 			        regexp: {
 					regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example www.twitter.com.'
+					message: 'Please enter a valid Twitter Link. For example www.twitter.com.'
 					}
 				}
             },
@@ -114,7 +114,7 @@
 					},
 				    regexp: {
 					regexp: /^[www].[a-zA-Z0-9-].[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example www.google.com.'
+					message: 'Please enter a valid Google+ Link. For example www.google.com.'
 					}
 				}
             }

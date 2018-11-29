@@ -54,7 +54,7 @@ class Preview extends CI_Controller
          $admindetails=$this->session->userdata('restaurantdetails');
            
 		 $data['aboutus_brief_list']=$this->Frontend_model->get_aboutus_brief_list();	
-		// echo '<pre>';print_r($data);exit; 
+		//echo '<pre>';print_r($data);exit; 
 		 
 	     $this->load->view('html/about',$data);
 		$this->load->view('html/footer');   

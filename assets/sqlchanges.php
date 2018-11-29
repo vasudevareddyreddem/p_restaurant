@@ -407,6 +407,8 @@ CREATE TABLE `reservation_time` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
 
+ALTER TABLE `restaurant`.`header`   
+  ADD COLUMN `tag_line` TEXT NULL AFTER `title`;
 
 
 

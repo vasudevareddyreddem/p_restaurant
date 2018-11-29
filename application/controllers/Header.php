@@ -62,7 +62,8 @@ public function addpost(){
 				'logo'=>$logos,
 				'banner'=>$banners,
 				'title'=>isset($post['title'])?$post['title']:'',
-				'status'=>1,
+				'tag_line'=>isset($post['tag_line'])?$post['tag_line']:'',
+				'status'=>0,
 				'created_at'=>date('Y-m-d H:i:s'),
 				'updated_at'=>date('Y-m-d H:i:s'),
 				'created_by'=>isset($admindetails['u_id'])?$admindetails['u_id']:''
@@ -164,7 +165,7 @@ public function editpost(){
 				'logo'=>$logos,
 				'banner'=>$banners,
 				'title'=>isset($post['title'])?$post['title']:'',
-				'status'=>1,
+				'tag_line'=>isset($post['tag_line'])?$post['tag_line']:'',
 				'created_at'=>date('Y-m-d H:i:s'),
 				'updated_at'=>date('Y-m-d H:i:s'),
 				'created_by'=>isset($admindetails['u_id'])?$admindetails['u_id']:''

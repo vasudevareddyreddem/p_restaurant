@@ -36,10 +36,18 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Tag Lines </label>
+									<input type="text" class="form-control" name="tag_line"   placeholder="Enter Tag Lines...." >
+									</div>
+								</div>
+							
 							<div class="m-t-20 text-center">
 								<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Upload</button>
 							</div>
 						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -51,6 +59,9 @@
             fields: {
 				favicon: {
                 validators: {
+					notEmpty: {
+                            message: 'Favicon is required'
+                        },
 					regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
@@ -60,6 +71,9 @@
 			
 				logo: {
                 validators: {
+					notEmpty: {
+                            message: 'Logo is required'
+                        },
 					regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
@@ -68,6 +82,9 @@
             },
 				banner: {
                 validators: {
+					notEmpty: {
+                            message: 'Banner is required'
+                        },
 					regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
@@ -75,7 +92,13 @@
 				}
             },
 				
-                title: {
+                tag_line: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Tag Line is required'
+                        }
+                    }
+                },title: {
                     validators: {
                         notEmpty: {
                             message: 'Title is required'

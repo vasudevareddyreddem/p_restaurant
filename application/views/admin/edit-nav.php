@@ -37,6 +37,12 @@
 									</div>
 								</div>
 							</div>
+								<div class="col-md-6">
+								<div class="form-group">
+									<label>Tag Lines </label>
+									<input type="text" class="form-control" name="tag_line"   placeholder="Enter Tag Lines...." value="<?php echo isset($edit_header['tag_line'])?$edit_header['tag_line']:''; ?>" >
+									</div>
+								</div>
 							<div class="m-t-20 text-center">
 								<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Upload</button>
 							</div>
@@ -74,7 +80,13 @@
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
 					}
 				}
-            },
+            },tag_line: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Tag Line is required'
+                        }
+                    }
+                },
 				
                 title: {
                     validators: {

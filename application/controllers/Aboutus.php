@@ -404,6 +404,16 @@ public function brieflists(){
 		 $data['edit_aboutus_brief']=$this->Header_model->edit_aboutus_brief_details($aboutus);
 		 //echo'<pre>';print_r($data);exit; 
 		 
+		 if(isset($edit_aboutus_brief) && count($edit_aboutus_brief)>0){
+						foreach($edit_aboutus_brief as $list){
+							$about=$list;
+						}
+					}else{
+						$about='';
+					}
+		 
+		 $data['edit_aboutus_brief']=$about;
+		 
 	      $this->load->view('admin/edit-aboutusbrief',$data);
 	      $this->load->view('admin/footer');
 	    

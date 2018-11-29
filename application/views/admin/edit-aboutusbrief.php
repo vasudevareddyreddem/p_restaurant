@@ -26,6 +26,7 @@
 					</div>
 				
 					<form id="defaultForm" method="post" class="m-b-30" action="#">
+				
 						<div class="row">
 							<div class="col-lg-12">
 								<h4 class="text-primary">Add Paragraph</h4>
@@ -34,18 +35,23 @@
 								<table class="table table-bordered table-hover" id="tab_logic">
 									
 									<tbody>
+										
 										<tr id='addr0'>
 											<td class="form-group">
-												<textarea class="form-control" name="paragraph" placeholder="Enter Here..."><?php echo isset($edit_aboutus_brief['paragraph'])?$edit_aboutus_brief['paragraph']:''; ?></textarea>
+												<textarea class="form-control" name="paragraph[]" placeholder="Enter Here..."><?php echo $lis['paragraph']; ?></textarea>
 												</td>
 												
 												</tr>
+												
 												<tr id='addr1'></tr>
+												
 											</tbody>
+											
 										</table>
 										
 									</div>
 								</div>
+					
 								<div class="m-t-20 text-center">
 									<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Upload</button>
 								</div>

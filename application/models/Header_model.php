@@ -297,8 +297,23 @@ class Header_model extends CI_Model
 	public function edit_aboutus_brief_details($a_b_id){
 	$this->db->select('aboutus_brief.*')->from('aboutus_brief');
 	$this->db->where('a_b_id',$a_b_id);
-	return $this->db->get()->row_array();	
+	$return=$this->db->get()->row_array();
+		$about_list=$this->get_edit_about_list($return['a_b_id']);
+		$data[$return['a_b_id']]=$return;
+		$data[$return['a_b_id']]['about_list']=$about_list;
+		if(!empty($data)){
+			return $data;
+		}
 	}
+	public  function get_edit_about_list($a_b_id){
+		$this->db->select('*')->from('aboutus_paragrap');
+		$this->db->where('aboutus_paragrap.emp_id',$a_b_id);
+		return $this->db->get()->result_array();
+		
+	}
+	
+	
+	
 	public function update_aboutus_brief_details($a_b_id,$data){
 	$this->db->where('a_b_id',$a_b_id);
     return $this->db->update("aboutus_brief",$data);

@@ -62,9 +62,9 @@ class Preview extends CI_Controller
 		 $data['chefs_count']=$this->Frontend_model->get_chefs_count_list();	
 		 $data['food_count']=$this->Frontend_model->get_food_type_count_list();
 		 $data['reservation_times']=$this->Frontend_model->get_reservation_times_list();
-			//echo '<pre>';print_r($data);exit; 
-		 
-	     $this->load->view('html/about',$data);
+		 $data['contactus']=$this->Frontend_model->contactus_list();
+		 //echo '<pre>';print_r($data);exit; 
+		 $this->load->view('html/about',$data);
 		 $this->load->view('html/footer');   
 
          }else{

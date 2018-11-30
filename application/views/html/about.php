@@ -53,11 +53,11 @@
                 <div class="swin-sc swin-sc-counter">
                   <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="counter-info item"><span data-from="50" data-to="103" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/dishes</span></div>
+                      <div class="counter-info item"><span data-from="0" data-to="<?php echo isset($food_count['food_total_count'])?$food_count['food_total_count']:'';?>" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/dishes</span></div>
                       <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-1.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="counter-info item"><span data-from="2300" data-to="2389" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/customers</span></div>
+                      <div class="counter-info item"><span data-from="0" data-to="<?php echo isset($chefs_count['chief_total_count'])?$chefs_count['chief_total_count']:'';?>" data-speed="3000" data-refresh-interval="5" class="number timer" >0</span><span class="caption">/Chefs</span></div>
                       <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-2.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -68,6 +68,7 @@
                       <div class="counter-info item"><span data-from="2500" data-to="2589" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/working hours</span></div>
                       <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-4.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
+					
                   </div>
                 </div>
               </div>

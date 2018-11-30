@@ -204,8 +204,17 @@ class Frontend_model extends CI_Model
 	 return $this->db->get()->row_array();	
 	}
 	
-	
-	
+	public function get_chefs_count_list(){
+	$this->db->select('Count(chefs.c_id) as chief_total_count')->from('chefs');
+	$this->db->where('chefs.status ',1);	
+	return $this->db->get()->row_array();
+	}
+	public function get_food_type_count_list(){
+	$this->db->select('Count(menu_brief_all_details.food_type) as food_total_count')->from('menu_brief_all_details');
+	$this->db->group_by('menu_brief_all_details.food_type');
+	$this->db->where('menu_brief_all_details.status ',1);	
+	return $this->db->get()->row_array();
+	}
 	
 	
 	

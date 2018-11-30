@@ -25,6 +25,7 @@
 									<th>Logo</th>
 									<th>Banner</th>
 									<th>Title</th>
+									<th>Tag Lines</th>
 									<th>Status</th>
 									<th class="text-right">Action</th>
 								</tr>
@@ -41,6 +42,7 @@
 												<img class="img-responsive" src="<?php echo base_url('assets/headerpic/'.$list['banner']);?>" alt="" style="height:50px;width:auto;">
 												</td>
 												<td><?php echo $list['title'];?></td>
+												<td><?php echo $list['tag_line'];?></td>
 												<td><?php if($list['status']==1){ echo "Active";}else{ echo "Deactive"; } ?></td>
 												<td class="text-right">
 											<a href="<?php echo base_url('header/edit/'.base64_encode($list['h_id'])); ?>"  data-toggle="tooltip" title="Edit" class="btn btn-success"><i class="fa fa-pencil btn btn-success"></i></a>

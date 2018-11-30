@@ -362,16 +362,10 @@
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-male"></i></div>
                               <select type="text" placeholder="People" name="people" class="form-control" required>
-                                <option value="1 People">1 person</option>
-                                <option value="2 People">2 person</option>
-                                <option value="3 People">3 person</option>
-                                <option value="4 People">4 person</option>
-                                <option value="5 People">5 person</option>
-                                <option value="6 People">6 person</option>
-                                <option value="7 People">7 person</option>
-                                <option value="8 People">8 person</option>
-                                <option value="9 People">9 person</option>
-                                <option value="10 People">10 person</option>
+                                <option value="">Select</option>
+								<?php for($i=1;$i<=20;$i++){ ?>
+								  <option value="<?php echo $i; ?> persons"><?php echo $i; ?> persons</option>
+								<?php } ?>
                               </select>
                             </div>
                           </div>
@@ -385,8 +379,17 @@
                                 <div class="fa fa-clock-o"></div>
                               </div>
                               <select type="text" placeholder="Time" name="time" class="form-control" required>
-                                <option value="7:00 AM">7:00 AM</option>
-                                <option value="8:00 AM">8:00 AM</option>
+							  <option value="">Select</option>
+							  <?php if(isset($time_list)&& count($time_list)>0){ ?>
+							  <?php foreach($time_list as $list){ ?>
+									<option value="<?php echo $list; ?>"><?php echo $list; ?></option>
+							  <?php }?>
+							  <?php }else{?>
+								<option value="7:00 AM">12:00 Pm</option>
+                                <option value="8:00 AM">1:00 Pm</option>
+							  <?php } ?>
+							  
+                                
                               </select>
                             </div>
                           </div>

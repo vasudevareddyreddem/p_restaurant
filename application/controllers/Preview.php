@@ -38,6 +38,32 @@ class Preview extends CI_Controller
 		   $data['menu_list']=$this->Frontend_model->menu_item_details_list();
 		   $data['servies_list']=$this->Frontend_model->servies_details_list();
 		   $data['daily_special_list']=$this->Frontend_model->daily_special_list();
+		   $reservation_times=$this->Frontend_model->get_reservation_times_list();
+		 $data['contactus']=$this->Frontend_model->contactus_list();
+		 $time_list=array("12:00 am","12:30 am","01:00 am","01:30 am","02:00 am","02:30 am","03:00 am","03:30 am","04:00 am","04:30 am","05:00 am","05:30 am","06:00 am","06:30 am","07:00 am","07:30 am","08:00 am","08:30 am","09:00 am","09:30 am","10:00 am","10:30 am","11:00 am","11:30 am","12:00 pm","12:30 pm","01:00 pm","01:30 pm","02:00 pm","02:30 pm","03:00 pm","03:30 pm","04:00 pm","04:30 pm","05:00 pm","05:30 pm","06:00 pm","06:30 pm","07:00 pm","07:30 pm","08:00 pm","08:30 pm","09:00 pm","09:30 pm","10:00 pm","10:30 pm","11:00 pm","11:30 pm");
+			$start_date =$reservation_times['time_form'];
+			$end_date = $reservation_times['time_to'];
+			$interval = '60 mins';
+			$format = '12';
+			$startTime = strtotime($start_date); 
+			$endTime   = strtotime($end_date);
+			$returnTimeFormat = ($format == '12')?'h:i a':'G:i:s';
+
+			$current   = time(); 
+			$addTime   = strtotime('+'.$interval, $current); 
+			$diff      = $addTime - $current;
+
+			$times = array(); 
+			while ($startTime < $endTime) { 
+			$times[] = date($returnTimeFormat, $startTime); 
+			$startTime += $diff; 
+			} 
+			$times[] = date($returnTimeFormat, $startTime);
+			if(isset($times) && count($times)>0){
+				$data['time_list']=$times;
+			}else{
+				$data['time_list']=array();
+			}
 			//echo'<pre>';print_r($data['header_imgs']);exit;
 	      $this->load->view('admin/preview-index',$data);
           $this->load->view('html/footer');

@@ -127,8 +127,7 @@ class Frontend_model extends CI_Model
  }
 	public function get_aboutus_data_list($emp_id){
 	 $this->db->select('aboutus_paragrap.*')->from('aboutus_paragrap');
-     $this->db->where('aboutus_paragrap.emp_id',$emp_id);
-     $this->db->where('aboutus_paragrap.status',1);
+     $this->db->where('aboutus_paragrap.a_b_id',$emp_id);
 	 return $this->db->get()->result_array();
 	
 	}

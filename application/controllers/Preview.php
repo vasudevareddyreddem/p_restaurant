@@ -114,7 +114,7 @@ class Preview extends CI_Controller
 			}else{
 				$data['time_list']=array();
 			}
-			//echo '<pre>';print_r($times);exit; 
+			//echo '<pre>';print_r($data);exit; 
 		 $this->load->view('html/about',$data);
 		 $this->load->view('html/footer');   
 

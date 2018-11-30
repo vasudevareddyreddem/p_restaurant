@@ -35,7 +35,7 @@ class Home extends CI_Controller
 		   $data['menu_special']=$this->Frontend_model->menu_special_list();
 		   
 		 //echo'<pre>';print_r($data['menu_special']);exit;
-	      $this->load->view('admin/preview-index',$data);
+	      $this->load->view('html/index',$data);
           $this->load->view('html/footer');
  
 	    

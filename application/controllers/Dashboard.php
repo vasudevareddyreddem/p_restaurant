@@ -17,8 +17,12 @@ class Dashboard extends In_frontend {
 		if($this->session->userdata('restaurantdetails'))
 		{
 			$admindetails=$this->session->userdata('restaurantdetails');
-	
-	            $this->load->view('admin/index');
+	          $data['hot_dishes']=$this->Dashboard_model->get_hot_dishes_count_list();
+			   $data['chefs_count']=$this->Dashboard_model->get_chefs_count_list();
+			   $data['food_items']=$this->Dashboard_model->get_food_items_count_list();
+		      $data['testimal_count']=$this->Dashboard_model->get_testmals_count_list();
+			   //echo '<pre>';print_r($data);exit;
+	            $this->load->view('admin/index',$data);
 				$this->load->view('admin/footer');
 				
 		   }else{

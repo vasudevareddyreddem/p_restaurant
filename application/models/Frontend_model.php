@@ -216,6 +216,21 @@ class Frontend_model extends CI_Model
 	return $this->db->get()->row_array();
 	}
 	
+	/* for  resevation */
+	public  function save_reservation_table($data){
+		$this->db->insert('reservation_user_list',$data);
+		return $this->db->insert_id();
+	}
+	public  function check_contact_details(){
+		$this->db->select('*')->from('contactus');
+	    return $this->db->get()->row_array();
+	}
+	
+	public  function get_reservation_times_list(){
+		$this->db->select('*')->from('reservation_time');
+	    return $this->db->get()->row_array();
+	}
+	
 	
 	
 	

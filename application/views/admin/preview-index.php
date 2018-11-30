@@ -336,61 +336,62 @@
                         <p class="subtitle">You can call us directly at <span class="text-default"> 225-88888</span></p>
                       </div>
                       <div class="swin-sc swin-sc-contact-form dark mtl">
-                        <form>
-                          <div class="form-group">
-                            <div class="input-group">
+                        <form action="<?php echo base_url('preview/reservation_post'); ?>" method="post">
+                          <div class="form-group ">
+							<div class="input-group">
+                              <div class="input-group-addon">
+                                <div class="fa fa-user"></div>
+                              </div>
+                              <input type="text" placeholder="Name" name="name" class="form-control" required>
+                            </div>
+							<div class="input-group">
+                              <div class="input-group-addon">
+                                <div class="fa fa-envelope"></div>
+                              </div>
+                              <input type="email" placeholder="Email" name="email" class="form-control" required>
+                            </div>
+						  </div>
+						  <div class="form-group">
+                            
+							<div class="input-group">
                               <div class="input-group-addon">
                                 <div class="fa fa-phone"></div>
                               </div>
-                              <input type="text" placeholder="Phone" class="form-control">
+                              <input type="text" placeholder="Phone" name="phone" class="form-control" required>
                             </div>
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                              <select type="text" placeholder="People" class="form-control">
-                                <option>1 person</option>
-                                <option>2 People</option>
-                                <option>3 People</option>
-                                <option>4 People</option>
-                                <option>5 People</option>
-                                <option>6 People</option>
-                                <option>7 People</option>
-                                <option>8 People</option>
-                                <option>9 People</option>
-                                <option>10 People</option>
+                              <select type="text" placeholder="People" name="people" class="form-control" required>
+                                <option value="1 People">1 person</option>
+                                <option value="2 People">2 person</option>
+                                <option value="3 People">3 person</option>
+                                <option value="4 People">4 person</option>
+                                <option value="5 People">5 person</option>
+                                <option value="6 People">6 person</option>
+                                <option value="7 People">7 person</option>
+                                <option value="8 People">8 person</option>
+                                <option value="9 People">9 person</option>
+                                <option value="10 People">10 person</option>
                               </select>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                              <input type="text" placeholder="Date" class="form-control datepicker">
+                              <input type="text" placeholder="Date" name="date" class="form-control datepicker" required>
                             </div>
                             <div class="input-group">
                               <div class="input-group-addon">
                                 <div class="fa fa-clock-o"></div>
                               </div>
-                              <select type="text" placeholder="Time" class="form-control">
-                                <option>7:00 AM</option>
-                                <option>8:00 AM</option>
-                                <option>9:00 AM</option>
-                                <option>10:00 AM</option>
-                                <option>11:00 AM</option>
-                                <option>12:00 AM</option>
-                                <option>1:00 PM</option>
-                                <option>2:00 PM</option>
-                                <option>3:00 PM</option>
-                                <option>4:00 PM</option>
-                                <option>5:00 PM</option>
-                                <option>6:00 PM</option>
-                                <option>7:00 PM</option>
-                                <option>8:00 PM</option>
-                                <option>9:00 PM</option>
-                                <option>10:00 PM</option>
+                              <select type="text" placeholder="Time" name="time" class="form-control" required>
+                                <option value="7:00 AM">7:00 AM</option>
+                                <option value="8:00 AM">8:00 AM</option>
                               </select>
                             </div>
                           </div>
                           <div class="form-group">
-                            <div class="swin-btn-wrap center"><a href="#" class="swin-btn center form-submit"> <span>	Find Table</span></a></div>
+                            <div class="swin-btn-wrap center"><button type="submit" class="swin-btn center form-submit"> <span>	Find Table</span></button></div>
                           </div>
                         </form>
                       </div>

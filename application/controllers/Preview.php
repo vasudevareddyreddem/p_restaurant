@@ -7,6 +7,7 @@ class Preview extends CI_Controller
 		parent::__construct();
 		$this->load->model('Frontend_model');
 		$this->load->library('session');
+		$this->load->library('user_agent');	
 	    if($this->session->userdata('restaurantdetails'))
 			{
 			   $admindetails=$this->session->userdata('restaurantdetails');
@@ -60,10 +61,11 @@ class Preview extends CI_Controller
 		 //echo '<pre>';print_r($data);exit;
 		 $data['chefs_count']=$this->Frontend_model->get_chefs_count_list();	
 		 $data['food_count']=$this->Frontend_model->get_food_type_count_list();
-		//echo '<pre>';print_r($data);exit; 
+		 $data['reservation_times']=$this->Frontend_model->get_reservation_times_list();
+			//echo '<pre>';print_r($data);exit; 
 		 
 	     $this->load->view('html/about',$data);
-		$this->load->view('html/footer');   
+		 $this->load->view('html/footer');   
 
          }else{
 		 $this->session->set_flashdata('error',"Please login and continue");
@@ -123,7 +125,38 @@ class Preview extends CI_Controller
 		 $this->session->set_flashdata('error',"Please login and continue");
 		 redirect('');  
 	   }
-} 
+	}
+
+	public  function reservation_post(){
+		$post=$this->input->post();
+		$add=array(
+		'name'=>isset($post['name'])?$post['name']:'',
+		'email'=>isset($post['email'])?$post['email']:'',
+		'phone'=>isset($post['phone'])?$post['phone']:'',
+		'people'=>isset($post['people'])?$post['people']:'',
+		'date'=>isset($post['date'])?$post['date']:'',
+		'time'=>isset($post['time'])?$post['time']:'',
+		'created_at'=>date('y-m-d H:i:s'),
+		);
+		$save=$this->Frontend_model->save_reservation_table($add);
+		if(count($save)>0){
+						$details=$this->Frontend_model->check_contact_details();
+						$this->load->library('email');
+						$this->email->set_newline("\r\n");
+						$this->email->set_mailtype("html");
+						$this->email->from($post['email']);
+						$this->email->to($details['email']);
+						$this->email->subject('Reservation - Request');
+						$msg='Name:'.$post['name'].'<br> Email :'.$post['email'].'<br> Phone  number :'.$post['phone'].'<br> Date and TIme :'.$post['date'].' '.$post['time'].'<br> peoples :'.$post['people'];
+						$this->email->message($msg);
+						$this->email->send();
+						$this->session->set_flashdata('success',"Your request message was successfully sent");
+							redirect($this->agent->referrer());
+					}else{
+						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+						redirect($this->agent->referrer());
+					}
+	}	
    
    
 	

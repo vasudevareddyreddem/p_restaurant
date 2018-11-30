@@ -102,7 +102,7 @@
                 <div class="swin-sc swin-sc-counter">
                   <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="counter-info item"><span data-from="0" data-to="<?php echo isset($food_count['food_total_count'])?$food_count['food_total_count']:'';?>" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/dishes</span></div>
+                      <div class="counter-info item"><span data-from="0" data-to="<?php echo isset($hot_dishes['dishes_count'])?$hot_dishes['dishes_count']:'';?>" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/hot dishes</span></div>
                       <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-1.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -110,14 +110,14 @@
                       <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-2.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="counter-info item"><span data-from="1" data-to="20" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/awards</span></div>
-                      <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-3.png" alt="Pracha" class="img img-responsive"></div>
+                      <div class="counter-info item"><span data-from="0" data-to="<?php echo isset($food_items['items_count'])?$food_items['items_count']:'';?>" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/food items</span></div>
+                      <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-1.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    
+					 <div class="col-md-3 col-sm-6 col-xs-12">
                       <div class="counter-info item"><span data-from="2500" data-to="2589" data-speed="3000" data-refresh-interval="5" class="number timer">0</span><span class="caption">/working hours</span></div>
                       <div class="counter-avatar"><img src="<?php echo base_url();?>assets/images/counter-4.png" alt="Pracha" class="img img-responsive"></div>
                     </div>
-					
                   </div>
                 </div>
               </div>

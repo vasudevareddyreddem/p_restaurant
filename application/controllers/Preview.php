@@ -86,7 +86,8 @@ class Preview extends CI_Controller
 		 $data['aboutus_brief_list']=$this->Frontend_model->get_aboutus_brief_list();
 		 //echo '<pre>';print_r($data);exit;
 		 $data['chefs_count']=$this->Frontend_model->get_chefs_count_list();	
-		 $data['food_count']=$this->Frontend_model->get_food_type_count_list();
+		 $data['hot_dishes']=$this->Frontend_model->get_hot_dishes_count_list();
+		 $data['food_items']=$this->Frontend_model->get_food_items_count_list();
 		 $reservation_times=$this->Frontend_model->get_reservation_times_list();
 		 $data['contactus']=$this->Frontend_model->contactus_list();
 		 $time_list=array("12:00 am","12:30 am","01:00 am","01:30 am","02:00 am","02:30 am","03:00 am","03:30 am","04:00 am","04:30 am","05:00 am","05:30 am","06:00 am","06:30 am","07:00 am","07:30 am","08:00 am","08:30 am","09:00 am","09:30 am","10:00 am","10:30 am","11:00 am","11:30 am","12:00 pm","12:30 pm","01:00 pm","01:30 pm","02:00 pm","02:30 pm","03:00 pm","03:30 pm","04:00 pm","04:30 pm","05:00 pm","05:30 pm","06:00 pm","06:30 pm","07:00 pm","07:30 pm","08:00 pm","08:30 pm","09:00 pm","09:30 pm","10:00 pm","10:30 pm","11:00 pm","11:30 pm");
@@ -129,8 +130,8 @@ class Preview extends CI_Controller
 		{	
          $admindetails=$this->session->userdata('restaurantdetails');
          $data['daily_special_list']=$this->Frontend_model->daily_special_list(); 
-		 $data['menu_special']=$this->Frontend_model->menu_special_list();
-		 
+		  $data['menu_list']=$this->Frontend_model->menu_item_details_list();
+		 //echo '<pre>';print_r($data);exit; 
 		 
 	      $this->load->view('html/menu',$data);
 		  $this->load->view('html/footer');   

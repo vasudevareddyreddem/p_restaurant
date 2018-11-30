@@ -218,6 +218,14 @@ class Frontend_model extends CI_Model
 	$this->db->where('menu_brief_all_details.status ',1);	
 	return $this->db->get()->row_array();
 	}
+	public function get_testmals_count_list(){
+	$this->db->select('Count(testimonial.t_id) as test_count')->from('testimonial');
+	$this->db->where('testimonial.status ',1);	
+	return $this->db->get()->row_array();
+	}
+	
+	
+	
 	/* for  resevation */
 	public  function save_reservation_table($data){
 		$this->db->insert('reservation_user_list',$data);

@@ -10,21 +10,14 @@ class Preview extends CI_Controller
 		$this->load->library('user_agent');	
 	    if($this->session->userdata('restaurantdetails'))
 			{
-			   $admindetails=$this->session->userdata('restaurantdetails');
-			   $data['contactus']=$this->Frontend_model->contactus_list($admindetails);
-			  $data['topheader']=$this->Frontend_model->topheader_details_list($admindetails);
-             $data['opening_hours']=$this->Frontend_model->contactus_details_list($admindetails);
-			             $data['header_imgs']=$this->Frontend_model->get_header_img_details();
-
-
-		        //echo'<pre>';print_r($data);exit;
-			   $this->load->view('html/header',$data);
-
-			   
+				$admindetails=$this->session->userdata('restaurantdetails');
+				$data['contactus']=$this->Frontend_model->contactus_list($admindetails);
+				$data['topheader']=$this->Frontend_model->topheader_details_list($admindetails);
+				$data['opening_hours']=$this->Frontend_model->contactus_details_list($admindetails);
+				$data['header_imgs']=$this->Frontend_model->get_header_img_details();
+				$this->load->view('admin/previewheader',$data);
 			}
 	}
-
-	
 	public function index(){
     if($this->session->userdata('restaurantdetails'))
 		{	

@@ -7,23 +7,16 @@ class Home extends CI_Controller
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('Frontend_model');
-	    if($this->session->userdata('restaurantdetails'))
-			{
-			   $admindetails=$this->session->userdata('restaurantdetails');
-			   $data['contactus']=$this->Frontend_model->contactus_list($admindetails);
-			    $data['opening_hours']=$this->Frontend_model->contactus_details_list($admindetails);
-				$data['topheader']=$this->Frontend_model->topheader_details_list($admindetails);
+			   $data['contactus']=$this->Frontend_model->contactus_list();
+			    $data['opening_hours']=$this->Frontend_model->contactus_details_list();
+				$data['topheader']=$this->Frontend_model->topheader_details_list();
 
-		       //echo'<pre>';print_r($data);exit;
+		      //echo'<pre>';print_r($data);exit;
 			   $this->load->view('html/header',$data);
-			   
-			}
+			
 	}
 
 	public function index(){
-    if($this->session->userdata('restaurantdetails'))
-		{	
-         $admindetails=$this->session->userdata('restaurantdetails');
           $data['blog_list']=$this->Frontend_model->blog_details_list();
 		 		  //echo'<pre>';print_r($data);exit;
           $data['gallery_list']=$this->Frontend_model->gallery_details_list();
@@ -39,10 +32,7 @@ class Home extends CI_Controller
           $this->load->view('html/footer');
  
 	    
-         }else{
-		 $this->session->set_flashdata('error',"Please login and continue");
-		 redirect('');  
-	   }
+         
 }
 	
 

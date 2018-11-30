@@ -7,25 +7,20 @@
 			</div>
 			
 		</div>
-			<form id="defaultForm" method="post" class="m-b-30" action="<?php  echo base_url('aboutus/editbriefpost');?>" enctype="multipart/form-data">
-			<input type="hidden" id="a_b_id" name="a_b_id" value="<?php echo $edit_aboutus_brief['a_b_id'] ?>">
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label>Upload Banner</label>
-						<input type="file" class="form-control"  name="banner" value="<?php echo isset($edit_aboutus_brief['banner'])?$edit_aboutus_brief['banner']:''; ?>">
-						</div>
-					</div>
-					<div class="col-md-6">
+			
+				
+			<form id="defaultForm" method="post" class="m-b-30" action="<?php  echo base_url('aboutus/editbriefpost');?>" enctype="multipart/form-data">
+						<input type="hidden" id="a_b_id" name="a_b_id" value="<?php echo $edit_aboutus_brief['a_b_id'] ?>">
+
+					<div class="row">
+					<div class="col-md-12">
 						<div class="form-group">
 							<label>Enter Title</label>
 							<input type="text" class="form-control" placeholder="Enter Title" name="title" value="<?php echo isset($edit_aboutus_brief['title'])?$edit_aboutus_brief['title']:''; ?>">
 							</div>
 						</div>
 					</div>
-				
-					<form id="defaultForm" method="post" class="m-b-30" action="#">
 				
 						<div class="row">
 							<div class="col-lg-12">
@@ -35,27 +30,33 @@
 								<table class="table table-bordered table-hover" id="tab_logic">
 									
 									<tbody>
+									<?php $cnt=1;foreach($edit_aboutus_brief['about_list'] as $lis){ ?>
 										
+										<tr id="oldid<?php echo $cnt; ?>">
+										<td>
+											<textarea class="form-control" name="paragraph[]" placeholder="Enter Here..."><?php echo $lis['paragraph']; ?></textarea>
+										</td>
+										<td class="text-center" valign="center"><a href="javascript:void(0);" onclick="removeparagraph('<?php echo $lis['a_p_id']; ?>','<?php echo $cnt; ?>')"><i class="fa fa-times-circle " style="font-size:25px;" aria-hidden="true"></i></a></td>
+												
+										</tr>
+									<?php $cnt++;} ?>
 										<tr id='addr0'>
 											<td class="form-group">
-												<textarea class="form-control" name="paragraph[]" placeholder="Enter Here..."><?php echo $lis['paragraph']; ?></textarea>
+												<textarea class="form-control" name="paragraph[]" placeholder="Enter Here..."></textarea>
 												</td>
 												
 												</tr>
-												
-												<tr id='addr1'></tr>
-												
-											</tbody>
-											
+										<tr id='addr1'></tr>
+									</tbody>
 										</table>
-										
+										<a id="add_row" class="btn btn-default pull-left">Add Row</a>
+										<a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
 									</div>
 								</div>
-					
 								<div class="m-t-20 text-center">
 									<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Upload</button>
 								</div>
-							</form>
+							
 						</form>
 					</div>
 				</div>
@@ -78,20 +79,32 @@
 	 });
 
 });
+
+function removeparagraph(p_id,id){
+	if(p_id!=''){
+		 jQuery.ajax({
+					url: "<?php echo site_url('aboutus/remove_pragraph');?>",
+					data: {
+						p_id: p_id,
+					},
+					dataType: 'json',
+					type: 'POST',
+					success: function (data) {
+					if(data.msg==1){
+						jQuery('#oldid'+id).hide();
+					}
+				 }
+				});
+			}
+	
+}
 </script>
 	<script type="text/javascript">
     $(document).ready(function() {
 		
         $('#defaultForm').bootstrapValidator({
             fields: {
-				banner: {
-                validators: {
-					regexp: {
-					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
-					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
-					}
-				}
-            },
+				
 			title: {
                  validators: {
                         notEmpty: {
@@ -116,6 +129,5 @@
 
     });
 </script>
-
 
 	

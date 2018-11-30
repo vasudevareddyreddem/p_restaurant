@@ -265,24 +265,23 @@ class Header_model extends CI_Model
 	$this->db->select('aboutus_brief.*')->from('aboutus_brief');
 	$this->db->where('aboutus_brief.status !=', 2);
 	 $return=$this->db->get()->result_array();
-  foreach($return as $list){
-   $lists=$this->get_aboutus_data_list($list['a_b_id']);
-   //echo '<pre>';print_r($lists);exit;
-   $data[$list['a_b_id']]=$list;
-   $data[$list['a_b_id']]['aboutus_list']=$lists;
-   
-  }
-  
-  if(!empty($data)){
-   
-   return $data;
-   
-  }
+	  foreach($return as $list){
+	   $lists=$this->get_aboutus_data_list($list['a_b_id']);
+	   //echo '<pre>';print_r($lists);exit;
+	   $data[$list['a_b_id']]=$list;
+	   $data[$list['a_b_id']]['aboutus_list']=$lists;
+	   
+	  }
+	if(!empty($data)){
+	   
+	   return $data;
+	   
+	  }
  }
 	public function get_aboutus_data_list($emp_id){
 	 $this->db->select('aboutus_paragrap.*')->from('aboutus_paragrap');
-     $this->db->where('aboutus_paragrap.emp_id',$emp_id);
-     $this->db->where('aboutus_paragrap.status',1);
+     $this->db->where('aboutus_paragrap.a_b_id',$emp_id);
+     $this->db->where('aboutus_paragrap.status !=',2);
 	 return $this->db->get()->result_array();
 	
 	
@@ -299,15 +298,15 @@ class Header_model extends CI_Model
 	$this->db->where('a_b_id',$a_b_id);
 	$return=$this->db->get()->row_array();
 		$about_list=$this->get_edit_about_list($return['a_b_id']);
-		$data[$return['a_b_id']]=$return;
-		$data[$return['a_b_id']]['about_list']=$about_list;
+		$data=$return;
+		$data['about_list']=$about_list;
 		if(!empty($data)){
 			return $data;
 		}
 	}
 	public  function get_edit_about_list($a_b_id){
 		$this->db->select('*')->from('aboutus_paragrap');
-		$this->db->where('aboutus_paragrap.emp_id',$a_b_id);
+		$this->db->where('aboutus_paragrap.a_b_id',$a_b_id);
 		return $this->db->get()->result_array();
 		
 	}
@@ -318,9 +317,9 @@ class Header_model extends CI_Model
 	$this->db->where('a_b_id',$a_b_id);
     return $this->db->update("aboutus_brief",$data);
 	}
-	public function delete_aboutus_brief_details($a_b_id){
-	$this->db->where('a_b_id',$a_b_id);
-	return $this->db->delete('aboutus_brief');
+	public function delete_aboutus_brief_praragraph_details($a_p_id){
+	$this->db->where('a_p_id',$a_p_id);
+	return $this->db->delete('aboutus_paragrap');
 	}
 	
 	/* servies brief*/

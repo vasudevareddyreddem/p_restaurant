@@ -31,23 +31,9 @@
 								<a href="" class=""><span> About Us </span> <span class="menu-arrow"></span></a>
 								<ul class="list-unstyled" style="display: none;">
 								
-									<li class="submenu"><a href="#">Homepage</a>
-									<ul class="list-unstyled" style="display: none;">
-								
-									<li><a href="<?php echo base_url('aboutus/add'); ?>">Homepage</a></li>
-									<li><a href="<?php echo base_url('aboutus/lists'); ?>">Homepage list</a></li>
-								
-						
-								</ul>
-								</li>
-									<li class="submenu"><a href="">About Us Brief</a>
-									<ul class="list-unstyled" style="display: none;">
-								
 									<li><a href="<?php echo base_url('aboutus/brief'); ?>">About us Brief</a></li>
 									<li><a href="<?php echo base_url('aboutus/brieflists'); ?>">About us Brief list</a></li>
 								
-						
-								</ul></li>
 						
 								</ul>
 							</li>

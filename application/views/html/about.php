@@ -9,92 +9,36 @@
             </div>
           </div>
           <div class="page-content-wrapper">
+		  <?php if(isset($aboutus_brief_list) && count($aboutus_brief_list)>0){ ?>
 		   <section class="ab-timeline-section padding-top-100 padding-bottom-100">
               <div class="container">
                 <div class="swin-sc swin-sc-title style-2">
-                  <h3 class="title"><span>Pracha Glory Story</span></h3>
+                  <h3 class="title"><span>About us</span></h3>
                 </div>
                 <div data-item="6" class="swin-sc swin-sc-timeline-2">
-                  <div class="main-slider">
-                    <div class="slides">
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2000</span></div><img src="assets/images/timeline/timeline-1.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2002</span></div><img src="assets/images/timeline/timeline-2.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2004</span></div><img src="assets/images/timeline/timeline-3.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2008</span></div><img src="assets/images/timeline/timeline-4.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2012</span></div><img src="assets/images/timeline/timeline-5.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2016</span></div><img src="assets/images/timeline/timeline-6.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                      <div class="timeline-item item swin-transition">
-                        <div class="timeline-item-wrap"><span class="timeline-year swin-transition">2017</span></div><img src="assets/images/timeline/timeline-7.jpg" alt="Pracha" class="img img-responsive">
-                      </div>
-                    </div>
-                  </div>
+                 
                   <div class="nav-slider">
                     <div class="slides">
+					<?php foreach($aboutus_brief_list as $list){ ?>
                       <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2000:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <p class="timeline-heading"><strong></strong><?php echo isset($list['title'])?$list['title']:''; ?></p>
+                        <?php if(isset($list['aboutus_list']) && count($list['aboutus_list'])>0){ ?>
+						<div class="timeline-content-detail">
+						<?php foreach($list['aboutus_list'] as $li){ ?>
+                          <p><?php echo isset($li['paragraph'])?$li['paragraph']:''; ?></p>
+						<?php } ?>
                         </div>
+							<?php } ?>
                       </div>
-                      <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2002:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </div>
-                      </div>
-                      <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2004:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </div>
-                      </div>
-                      <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2008:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </div>
-                      </div>
-                      <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2012:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </div>
-                      </div>
-                      <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2016:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </div>
-                      </div>
-                      <div class="timeline-content-item">
-                        <p class="timeline-heading"><strong>16.10.2017:</strong>The Begin of Pracha Restaurents</p>
-                        <div class="timeline-content-detail">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nosrud lorem exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                          <p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </div>
-                      </div>
+					<?php } ?>
+				
+                      
                     </div>
                   </div>
                 </div>
               </div>
+			 </section>
+			  <?php } ?>
             
             
             <section class="counter-section-03 padding-top-100 padding-bottom-100">

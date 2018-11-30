@@ -42,15 +42,7 @@
 								<a href="" class=""><span> Menu</span> <span class="menu-arrow"></span></a>
 								<ul class="list-unstyled" style="display: none;">
 								
-									<li class="submenu"><a href="#">Home page</a>
-									<ul class="list-unstyled" style="display: none;">
-								
-									<li><a href="<?php echo base_url('menu/homepage'); ?>">Home page Menu</a></li>
-									<li><a href="<?php echo base_url('menu/lists'); ?>">Home page List</a></li>
-								
-						
-								</ul>
-								</li>
+									
 									<li class="submenu"><a href="">Menu Brief</a>
 									<ul class="list-unstyled" style="display: none;">
 								
@@ -81,30 +73,7 @@
 						
 								</ul>
 							</li>
-							<li class="submenu">
-								<a href="" class=""><span> Reservation</span> <span class="menu-arrow"></span></a>
-								<ul class="list-unstyled" style="display: none;">
-								
-									<li class="submenu"><a href="#">Reservation Homepage</a>
-									<ul class="list-unstyled" style="display: none;">
-								
-									<li><a href="<?php echo base_url('reservation/add'); ?>">Homepage</a></li>
-									<li><a href="<?php echo base_url('reservation/lists'); ?>">Homepage list</a></li>
-								
 						
-								</ul>
-								</li>
-									<li class="submenu"><a href="">Reservation Brief</a>
-									<ul class="list-unstyled" style="display: none;">
-								
-									<li><a href="<?php echo base_url('reservation/brief'); ?>">Reservation Brief</a></li>
-									<li><a href="<?php echo base_url('reservation/brieflist'); ?>">Reservation list</a></li>
-								
-						
-								</ul></li>
-						
-								</ul>
-							</li>
 								<li class="submenu">
 								<a href="" class=""><span> Services</span> <span class="menu-arrow"></span></a>
 								<ul class="list-unstyled" style="display: none;">

@@ -172,76 +172,7 @@
             </section>
 			<?php } ?>
 			
-		       <?PHP if(isset($menu_special)&& count($menu_special)>0) {?>
-             <section class="product-sesction-01 padding-bottom-100 padding-top-100">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="swin-sc swin-sc-title">
-                      <p class="top-title"><span>Our Menu</span></p>
-                      <h3 class="title">Tasty And Good Price</h3>
-                    </div>
-                    <div class="swin-sc swin-sc-product products-01 style-02 woocommerce">
-					
-					
-                      <div class="row">
-                        <div class="col-md-2"></div>
-                        <div data-slide-toshow="5" class="cat-wrapper-02 main-slider col-md-8">
-						<?Php foreach($menu_special as $lis){ ?>
-						<?Php foreach($lis['menus_list'] as $list){ ?>
-                          <div class="item">
-                            <div class="cat-icons"><i class="icons swin-icon-pasta"></i>
-							
-                              <h5 class="cat-title"><?php echo isset($list['food_type'])?$list['food_type']:''; ?></h5>
-							
-                            </div>
-                          </div>
-						<?PHP }?>
-					    <?PHP }?>
-                        </div>
-                        <div class="col-md-2"></div>
-                      </div>
-					
-                      <div class="row">
-                        <div class="nav-slider">
-					 <?Php foreach($menu_special as $lis){ ?>
-					 <?Php foreach($lis['menus_list'] as $list){ ?>
-                          <div class="tab-content">
-                            <div class="col-md-5 col-sm-12">
-                              <div class="cat-wrapper">
-                                <div class="item"><img src="<?php echo base_url('assets/menu_bar_brief/'.$list['image']);?>" alt="" class="img img-responsive img-full"></div>
-                              </div>
-                            </div>
-                            <div class="col-md-7 col-sm-12">
-							
-                              <div class="products">
-                                <div class="item product-01">
-                                  <div class="item-left">
-                                    <h5 class="title"><?php echo isset($list['name'])?$list['name']:''; ?></h5>
-                                    <div class="des"><?php echo isset($list['description'])?$list['description']:''; ?></div>
-                                  </div>
-                                  <div class="item-right"><span class="price woocommerce-Price-amount amount"><span class="">₹</span><?php echo isset($list['price'])?$list['price']:''; ?></span></div>
-                                </div>
-                               
-                              </div>
-							  
-                            </div>
-                          </div>
-                          
-                           <?PHP }?>
-					     <?PHP }?>
-                        </div>
-                      </div>
-					
-					
-                    </div>
-					
-					
-                  </div>
-                </div>
-              </div>
-            </section>
-			 <?PHP }?>
+		     
 			
 				<?php if(isset($testmonial_list) && count($testmonial_list)>0){ ?>
 			

@@ -208,13 +208,16 @@ class Frontend_model extends CI_Model
 	$this->db->where('chefs.status ',1);	
 	return $this->db->get()->row_array();
 	}
-	public function get_food_type_count_list(){
-	$this->db->select('Count(menu_brief_all_details.food_type) as food_total_count')->from('menu_brief_all_details');
-	$this->db->group_by('menu_brief_all_details.food_type');
+	public function get_hot_dishes_count_list(){
+	$this->db->select('Count(gallery.g_id) as dishes_count')->from('gallery');
+	$this->db->where('gallery.status ',1);	
+	return $this->db->get()->row_array();
+	}
+	public function get_food_items_count_list(){
+	$this->db->select('Count(menu_brief_all_details.name) as items_count')->from('menu_brief_all_details');
 	$this->db->where('menu_brief_all_details.status ',1);	
 	return $this->db->get()->row_array();
 	}
-	
 	/* for  resevation */
 	public  function save_reservation_table($data){
 		$this->db->insert('reservation_user_list',$data);

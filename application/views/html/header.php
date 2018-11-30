@@ -91,14 +91,14 @@
                 <div class="close-offcanvas-wrapper"><span class="close-offcanvas">x</span></div>
                 <div class="main-nav">
                   <ul id="main-nav" class="nav nav-pills">
-                    <li class=" current-menu-item"><a href="<?php echo base_url('home'); ?>" class="">Home</a>
+                    <li class="<?php if($this->uri->segment(1)=='home' && $this->uri->segment(2)==''){ echo "current-menu-item"; } ?>"><a href="<?php echo base_url('home'); ?>" class="">Home</a>
                   
                     </li>
-                    <li><a href="<?php echo base_url('preview/aboutus'); ?>">About</a></li>
-                    <li><a href="<?php echo base_url('preview/reservation'); ?>">Reservation</a></li>
-                    <li class="dropdown"><a href="<?php echo base_url('preview/menu'); ?>">Menu</a>
+                    <li class="<?php if($this->uri->segment(1)=='home' && $this->uri->segment(2)=='aboutus'){ echo "current-menu-item"; } ?>"><a href="<?php echo base_url('home/aboutus'); ?>">About</a></li>
+                   <li class="<?php if($this->uri->segment(1)=='home' && $this->uri->segment(2)=='reservation'){ echo "current-menu-item"; } ?>"><a href="<?php echo base_url('home/reservation'); ?>">Reservation</a></li>
+                    <li class="<?php if($this->uri->segment(1)=='home' && $this->uri->segment(2)=='menu'){ echo "current-menu-item"; } ?>"><a href="<?php echo base_url('home/menu'); ?>">Menu</a>
                     </li>
-                    <li><a href="<?php echo base_url('preview/contact'); ?>">Contact</a></li>
+                    <li class="<?php if($this->uri->segment(1)=='home' && $this->uri->segment(2)=='contact'){ echo "current-menu-item"; } ?>"><a href="<?php echo base_url('home/contact'); ?>">Contact</a></li>
                   </ul>
                 </div>
               </nav>

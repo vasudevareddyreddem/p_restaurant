@@ -23,7 +23,7 @@
                       </div>
                     </div>
                     <div class="swin-sc swin-sc-contact-form light mtl">
-                      <form action="<?php echo base_url('preview/reservation_post'); ?>" method="post">
+                      <form   action="<?php echo base_url('preview/reservation_post'); ?>" method="post" >
                           <div class="form-group ">
 							<div class="input-group">
                               <div class="input-group-addon">
@@ -44,7 +44,7 @@
                               <div class="input-group-addon">
                                 <div class="fa fa-phone"></div>
                               </div>
-                              <input type="text" placeholder="Phone" name="phone" class="form-control" required>
+                              <input type="text" placeholder="Phone" name="phone" class="form-control" pattern="[1-9]{1}[0-9]{9}" maxlength="10"  required>
                             </div>
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-male"></i></div>

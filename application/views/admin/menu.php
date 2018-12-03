@@ -70,7 +70,7 @@
 													<option value="">Select food type</option>
 													<option value="Breakfast">Breakfast</option>
 													<option value="Lunch">Lunch</option>
-													<option value="Snaks">Snaks</option>
+													<option value="Snacks">Snacks</option>
 													<option value="Dinner">Dinner</option>
 													<option value="Desset">Desset</option>
 													<option value="Drink">Drink</option>

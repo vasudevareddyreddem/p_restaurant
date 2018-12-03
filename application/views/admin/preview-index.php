@@ -38,6 +38,9 @@
                       <p class="top-title"><span>Our Menu</span></p>
                       <h3 class="title">Tasty And Good Price</h3>
                     </div>
+					
+                        <a target="_blank" href="<?php echo base_url('preview/menu'); ?>" class="btn btn-primary">View More</a>
+              
                     <div class="swin-sc swin-sc-product products-01 style-02 woocommerce">
                       <div class="row">
                         <div class="col-md-2"></div>
@@ -120,6 +123,8 @@
                                 
                               </div>
                             </div>
+							
+							
                           </div>
 						<?php } ?>
                           
@@ -130,6 +135,8 @@
                   </div>
                 </div>
               </div>
+			  
+			  
             </section>
 			
 			<?php } ?>
@@ -279,7 +286,7 @@
                               <div class="input-group-addon">
                                 <div class="fa fa-envelope"></div>
                               </div>
-                              <input type="email" placeholder="Email" name="email" class="form-control" required>
+                              <input type="email" placeholder="Email" name="email" class="form-control" pattern="[^ @]*@[^ @]*" placeholder="Please enter a valid email address" required>
                             </div>
 						  </div>
 						  <div class="form-group">
@@ -288,7 +295,7 @@
                               <div class="input-group-addon">
                                 <div class="fa fa-phone"></div>
                               </div>
-                              <input type="text" placeholder="Phone" name="phone" class="form-control" required>
+                              <input type="text" placeholder="Phone" name="phone" pattern="[1-9]{1}[0-9]{9}" maxlength="10" class="form-control" required>
                             </div>
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-male"></i></div>
@@ -301,10 +308,11 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <div class="input-group">
+                            <div class="input-group date">
                               <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                              <input type="text" placeholder="Date" name="date" class="form-control datepicker" required>
+                              <input type="text" placeholder="Date" name="date" class="form-control datepicker"  required>
                             </div>
+							
                             <div class="input-group">
                               <div class="input-group-addon">
                                 <div class="fa fa-clock-o"></div>

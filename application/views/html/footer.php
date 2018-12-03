@@ -1,11 +1,11 @@
 <footer>
-          <div class="subscribe-section"><img src="assets/images/background/bg5.png" alt="" class="img-subscribe">
+          <div class="subscribe-section"><img src="<?php echo base_url();?>assets/images/background/bg5.png" alt="" class="img-subscribe">
             <div class="container">
               <div class="subscribe-wrapper">
                 <div class="row">
                   <div class="col-lg-8 col-lg-offset-2">
                     <div class="subscribe-heading">
-                      <h3 class="title">Subcribe Us Now</h3>
+                      <h3 class="title">Subscribe Us Now</h3>
                       <div class="des">Get more news and delicious dishes everyday from us</div>
                     </div>
                     <form class="widget-newsletter" action="<?php echo base_url('contactus/subscribe'); ?>" method="post">

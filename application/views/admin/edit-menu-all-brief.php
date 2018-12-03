@@ -43,7 +43,7 @@
 													<option value="">Select food type</option>
 													<option value="Breakfast" <?php if($edit_menu_all_brief['food_type']=='Breakfast'){ echo "selected"; } ?>>Breakfast</option>
 													<option value="Lunch" <?php if($edit_menu_all_brief['food_type']=='Lunch'){ echo "selected"; } ?>>Lunch</option>
-													<option value="Snaks"<?php if($edit_menu_all_brief['food_type']=='Snaks'){ echo "selected"; } ?> >Snaks</option>
+													<option value="Snacks"<?php if($edit_menu_all_brief['food_type']=='Snacks'){ echo "selected"; } ?> >Snacks</option>
 													<option value="Dinner"<?php if($edit_menu_all_brief['food_type']=='Dinner'){ echo "selected"; } ?>>Dinner</option>
 													<option value="Desset"<?php if($edit_menu_all_brief['food_type']=='Desset'){ echo "selected"; } ?>>Desset</option>
 													<option value="Drink"<?php if($edit_menu_all_brief['food_type']=='Drink'){ echo "selected"; } ?>>Drink</option>

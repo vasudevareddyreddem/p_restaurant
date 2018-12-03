@@ -35,7 +35,7 @@
                               <div class="input-group-addon">
                                 <div class="fa fa-phone"></div>
                               </div>
-                              <input type="text" placeholder="Phone" name="phone" class="form-control" required>
+                              <input type="text" placeholder="Phone" name="phone" pattern="[1-9]{1}[0-9]{9}" maxlength="10"  class="form-control" required>
                             </div>
                           </div>
                           <div class="form-group">

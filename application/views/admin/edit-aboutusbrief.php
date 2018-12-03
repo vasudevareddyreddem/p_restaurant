@@ -72,7 +72,7 @@
       i++; 
   });
      $("#delete_row").click(function(){
-    	 if(i>1){
+    	 if(i>0){
 		 $("#addr"+(i-1)).html('');
 		 i--;
 		 }
@@ -91,6 +91,7 @@ function removeparagraph(p_id,id){
 					type: 'POST',
 					success: function (data) {
 					if(data.msg==1){
+						jQuery('#oldid'+id).remove();
 						jQuery('#oldid'+id).hide();
 					}
 				 }

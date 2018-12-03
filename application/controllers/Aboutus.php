@@ -167,6 +167,7 @@ public  function remove_pragraph(){
 	$post=$this->input->post();
 					
 		$delete_data=$this->Header_model->delete_aboutus_brief_praragraph_details($post['p_id']);
+		//echo $this->db->last_query();exit;
 		if(count($delete_data)>0){
 			$data['msg']=1;
 			echo json_encode($data);exit;
@@ -258,21 +259,6 @@ public function briefdelete()
 		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

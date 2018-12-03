@@ -421,7 +421,7 @@
                             </div>
                             <div class="blog-featured-img"><img src="<?php echo base_url('assets/adminprofilepic/'.$list['pic']);?>" alt="" class="img img-responsive"></div>
                             <div class="blog-content">
-                              <div class="blog-date"><span class="day"><?php echo $list['date'];?></span></div>
+                              <div class="blog-date"><span class="day"><span class="day"><?php echo  date('d',strtotime($list['date'])); ?></span><span class="month"><?php echo  date('F',strtotime($list['date'])); ?></span></div>
                               <h3 class="blog-title"><a href="javascript:void(0)" class="swin-transition">How To Cook The Spicy Chinese Noodle For Cold Weather</a></h3>
                               <p class="blog-description"><?php echo $list['procedure'];?></p>
                               <div class="blog-readmore"><a href="javascript:void(0)" class="swin-transition">Read More <i class="fa fa-angle-double-right"></i></a></div>

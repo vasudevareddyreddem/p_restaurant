@@ -24,7 +24,7 @@
                     </div>
                     <p class="des font-bold text-center">WE HAVE THE GLORY BEGINING IN RESTAURANT BUSINESS</p>
                     <p class="des margin-bottom-20 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ullam laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div class="swin-btn-wrap center"><a href="<?php echo base_url('preview/aboutus'); ?>" class="swin-btn center form-submit btn-transparent"> <span>	About Us</span></a></div>
+                    <div class="swin-btn-wrap center"><a href="<?php echo base_url('home/aboutus'); ?>" class="swin-btn center form-submit btn-transparent"> <span>	About Us</span></a></div>
                   </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@
                       <p class="top-title"><span>Our Menu</span></p>
                       <h3 class="title">Tasty And Good Price</h3>
                     </div>
-				<a target="_blank" href="<?php echo base_url('preview/menu'); ?>" class="btn btn-primary">View More</a>
+				<a target="_blank" href="<?php echo base_url('home/menu'); ?>" class="btn btn-primary">View More</a>
 
 					
                     <div class="swin-sc swin-sc-product products-01 style-02 woocommerce">
@@ -143,7 +143,7 @@
                   <div class="col-lg-6 col-md-4"></div>
                   <div class="col-lg-6 col-md-8">
                     <div class="swin-sc swin-sc-title text-left light">
-                      <p class="top-title"><span>chef choise</span></p>
+                      <p class="top-title"><span>Chef Choice</span></p>
                       <h3 class="title">Daily Special</h3>
                     </div>
 					<?php if(isset($daily_special_list['item_list']) && count($daily_special_list['item_list'])>0){ ?>
@@ -270,7 +270,7 @@
                         <p class="subtitle">You can call us directly at <span class="text-default"> 225-88888</span></p>
                       </div>
                       <div class="swin-sc swin-sc-contact-form dark mtl">
-                        <form action="<?php echo base_url('preview/reservation_post'); ?>" method="post">
+                        <form action="<?php echo base_url('home/reservation_post'); ?>" method="post">
                           <div class="form-group ">
 							<div class="input-group">
                               <div class="input-group-addon">
@@ -306,7 +306,7 @@
                           <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                              <input type="text" placeholder="Date" name="date" class="form-control datepicker" required>
+                              <input type="date" placeholder="Date" name="date" class="form-control " required>
                             </div>
                             <div class="input-group">
                               <div class="input-group-addon">
@@ -351,17 +351,17 @@
                 </div>
                 <div class="swin-sc swin-sc-iconbox">
                   <div class="row">
-                    <?php $cnt=1; foreach($servies_list as $list){?>
+                    <?php  foreach($servies_list as $list){?>
 					
                     <div class="col-md-3 col-sm-6 col-xs-12">
                       <div data-wow-delay="0.5s" class="item icon-box-02 wow fadeInUpShort">
-                        <div class="wrapper-icon"><i class="icons swin-icon-dinner-2"></i><span class="number"><?php echo $cnt;?></span></div>
+                        <div class="wrapper-icon"><i class="icons swin-icon-dinner-2"></i></div>
                         <h4 class="title"><?php echo $list['name'];?></h4>
                         <div class="description"><?php echo $list['paragraph'];?></div>
                       </div>
                     </div>
                     
-                    <?php $cnt++;}?>
+                    <?php }?>
                   </div>
                 </div>
               </div>
@@ -380,7 +380,7 @@
                   <div class="grid-sizer col-sm-1"></div>
                  <?php foreach($gallery_list as $list){?>
                   <div class="grid-item col-sm-2 grid-item-h1">
-                    <div class="grid-wrap-item"><a href="#" class="gallery-title title"><?php echo $list['title'];?></a><a href="<?php echo base_url(); ?>assets/images/gallery/gallery-5.jpg" data-lightbox="image" class="view-lightbox swipebox"><i class="fa fa-search-plus"></i></a><a href="#" class="view-more"><i class="fa fa-link"></i></a>
+                    <div class="grid-wrap-item"><a href="#" class="gallery-title title"><?php echo $list['title'];?></a><a href="<?php echo base_url(); ?>assets/images/gallery/gallery-5.jpg" data-lightbox="image" class="view-lightbox swipebox"><i class="fa fa-search-plus"></i></a>
                       <div class="img-wrap"><img src="<?php echo base_url('assets/adminprofilepic/'.$list['image']);?>" alt="" class="img img-responsive"></div>
                     </div>
                   </div>
@@ -409,16 +409,10 @@
                         <div class="col-md-4 col-sm-6 col-xs-12">
                           <div data-wow-delay="0s" class="blog-item swin-transition item wow fadeInUpShort">
                             <div class="blog-info clearfix">
-                              <div class="blog-info-item blog-view">
-                                <p><i class="fa fa-eye"></i><span>18</span></p>
-                                <p></p>
-                              </div>
-                              <div class="blog-info-item blog-comment">
-                                <p><i class="fa fa-comment"></i><span>18</span></p>
-                                <p></p>
-                              </div>
+                              
+                              
                               <div class="blog-info-item blog-author">
-                                <p><span>Post By </span><a href="javascript:void(0)">Admin</a></p>
+                                <p><span>Post By </span><a href="javascript:void(0)"><?php echo $list['name']; ?></a></p>
                                 <p></p>
                               </div>
                             </div>
@@ -426,8 +420,7 @@
                             <div class="blog-content">
                               <div class="blog-date"><span class="day"><span class="day"><?php echo  date('d',strtotime($list['date'])); ?></span><span class="month"><?php echo  date('F',strtotime($list['date'])); ?></span></div>
                               <h3 class="blog-title"><a href="javascript:void(0)" class="swin-transition">How To Cook The Spicy Chinese Noodle For Cold Weather</a></h3>
-                              <p class="blog-description"><?php echo $list['procedure'];?></p>
-                              <div class="blog-readmore"><a href="javascript:void(0)" class="swin-transition">Read More <i class="fa fa-angle-double-right"></i></a></div>
+                              <p class="blog-description"><?php echo $list['procedure'];?></p> 
                             </div>
                           </div>
                         </div>

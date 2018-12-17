@@ -53,7 +53,7 @@
                           <div class="email-info">
                             <div class="info-icon"><i class="fa fa-envelope"></i></div>
                             <div class="info-content">
-                              <p><?php echo $contactus['email_id'];?></p>
+                             <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"><?php echo $contactus['email_id'];?></a> 
                             </div>
                           </div>
                         </div>

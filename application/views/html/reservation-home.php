@@ -23,7 +23,7 @@
                       </div>
                     </div>
                     <div class="swin-sc swin-sc-contact-form light mtl">
-                      <form   action="<?php echo base_url('preview/reservation_post'); ?>" method="post" >
+                      <form   action="<?php echo base_url('home/reservation_post'); ?>" method="post" >
                           <div class="form-group ">
 							<div class="input-group">
                               <div class="input-group-addon">
@@ -101,7 +101,7 @@
                       <?php  foreach($servies_brief as $list){ ?>
                       <div class="col-md-4 col-sm-6 col-xs-12">
                         <div data-wow-delay="0.5s" class="item icon-box-02 wow fadeInUpShort">
-                          <div class="wrapper-icon"><i class="icons swin-icon-dinner-2"></i></div>
+                          <div class="wrapper-icon"><i class="icons swin-icon-dinner-2"></i></span></div>
                           <h4 class="title"><?php echo $list['title'];?></h4>
                           <div class="description"><?php echo $list['paragraph'];?></div>
                         </div>

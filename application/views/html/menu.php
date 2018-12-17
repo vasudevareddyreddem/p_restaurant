@@ -126,7 +126,7 @@
                   <div class="col-lg-6 col-md-4"></div>
                   <div class="col-lg-6 col-md-8">
                     <div class="swin-sc swin-sc-title text-left light">
-                      <p class="top-title"><span>chef choise</span></p>
+                      <p class="top-title"><span>Chef Choice</span></p>
                       <h3 class="title">Daily Special</h3>
                     </div>
 					<?php if(isset($daily_special_list['item_list']) && count($daily_special_list['item_list'])>0){ ?>

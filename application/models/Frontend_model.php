@@ -45,7 +45,8 @@ class Frontend_model extends CI_Model
 	
 	
 	public function blog_details_list(){
-	 $this->db->select('blog.*')->from('blog');
+	 $this->db->select('blog.*,users.name')->from('blog');
+	 $this->db->join('users', 'users.u_id = blog.created_by', 'left');
     $this->db->where('blog.status',1);
 	return $this->db->get()->result_array();
 	}
@@ -241,8 +242,20 @@ class Frontend_model extends CI_Model
 	    return $this->db->get()->row_array();
 	}
 	
-	
-	
+	public  function save_contactus($data){
+		$this->db->insert('contactus_post',$data);
+		return $this->db->insert_id();
+		
+	}
+	public  function check_email_subscribe($email){
+		$this->db->select('*')->from('subscribe');
+	    $this->db->where('email',$email);
+	   return $this->db->get()->row_array();
+	}
+	public  function save_subscribe($data){
+		$this->db->insert('subscribe',$data);
+		return $this->db->insert_id();
+	}
 	
 	
   }

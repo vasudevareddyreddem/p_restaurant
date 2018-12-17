@@ -17,7 +17,7 @@
                     </div>
                     <div class="reservation-form style-02">
                       <div class="swin-sc swin-sc-contact-form light mtl style-full">
-                        <form  method="post" action="<?php echo base_url('contactus/contactpost'); ?>">
+                        <form  method="post" action="<?php echo base_url('home/contactpost'); ?>">
                           <div class="form-group">
                             <div class="input-group">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -79,7 +79,7 @@
                         <div class="media-body">
                           <h4 class="media-heading title">Mail</h4>
                           <div class="description">
-                            <p><?php echo isset($contactus['email_id'])?$contactus['email_id']:''; ?></p>
+                            <a href="mailto:webmaster@example.com"><?php echo isset($contactus['email_id'])?$contactus['email_id']:''; ?></a>
                           </div>
                         </div>
                       </div>

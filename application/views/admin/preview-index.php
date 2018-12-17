@@ -147,7 +147,7 @@
                   <div class="col-lg-6 col-md-4"></div>
                   <div class="col-lg-6 col-md-8">
                     <div class="swin-sc swin-sc-title text-left light">
-                      <p class="top-title"><span>chef choise</span></p>
+                      <p class="top-title"><span>Chef Choice</span></p>
                       <h3 class="title">Daily Special</h3>
                     </div>
 					<?php if(isset($daily_special_list['item_list']) && count($daily_special_list['item_list'])>0){ ?>
@@ -387,6 +387,7 @@
                   <div class="grid-item col-sm-2 grid-item-h1">
                     <div class="grid-wrap-item"><a href="#" class="gallery-title title"><?php echo $list['title'];?></a><a href="<?php echo base_url(); ?>assets/images/gallery/gallery-5.jpg" data-lightbox="image" class="view-lightbox swipebox"><i class="fa fa-search-plus"></i></a><a href="#" class="view-more"><i class="fa fa-link"></i></a>
                       <div class="img-wrap"><img src="<?php echo base_url('assets/adminprofilepic/'.$list['image']);?>" alt="" class="img img-responsive"></div>
+					  
                     </div>
                   </div>
                  <?php }?>
@@ -414,16 +415,10 @@
                         <div class="col-md-4 col-sm-6 col-xs-12">
                           <div data-wow-delay="0s" class="blog-item swin-transition item wow fadeInUpShort">
                             <div class="blog-info clearfix">
-                              <div class="blog-info-item blog-view">
-                                <p><i class="fa fa-eye"></i><span>18</span></p>
-                                <p></p>
-                              </div>
-                              <div class="blog-info-item blog-comment">
-                                <p><i class="fa fa-comment"></i><span>18</span></p>
-                                <p></p>
-                              </div>
+                              
+                              
                               <div class="blog-info-item blog-author">
-                                <p><span>Post By </span><a href="javascript:void(0)">Admin</a></p>
+                                <p><span>Post By </span><a href="javascript:void(0)"><?php echo $list['name']; ?></a></p>
                                 <p></p>
                               </div>
                             </div>
@@ -432,7 +427,6 @@
                               <div class="blog-date"><span class="day"><span class="day"><?php echo  date('d',strtotime($list['date'])); ?></span><span class="month"><?php echo  date('F',strtotime($list['date'])); ?></span></div>
                               <h3 class="blog-title"><a href="javascript:void(0)" class="swin-transition">How To Cook The Spicy Chinese Noodle For Cold Weather</a></h3>
                               <p class="blog-description"><?php echo $list['procedure'];?></p>
-                              <div class="blog-readmore"><a href="javascript:void(0)" class="swin-transition">Read More <i class="fa fa-angle-double-right"></i></a></div>
                             </div>
                           </div>
                         </div>

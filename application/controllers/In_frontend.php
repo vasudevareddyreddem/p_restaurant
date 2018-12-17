@@ -10,9 +10,11 @@ class In_frontend extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->library('user_agent');
 		$this->load->library('email');
 		$this->load->library('user_agent');
 		$this->load->helper('directory');
+		$this->load->helper('cookie');
 		$this->load->helper('security');
 		$this->load->model('User_model');
 		$this->load->model('Dashboard_model');

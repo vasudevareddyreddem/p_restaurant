@@ -176,7 +176,6 @@
 			<?php } ?>
 			
 		     
-			
 				<?php if(isset($testmonial_list) && count($testmonial_list)>0){ ?>
 			
             <section data-bottom-top="background-position: 50% 50px;" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -150px;" class="testimonial-section-01 padding-top-100 padding-bottom-100">
@@ -207,16 +206,17 @@
                             </div>
                           </div>
 						
-						  
                           <div data-width="150" class="nav-slider">
-					
+					     
+						 
                             <ul class="slides list-inline">
-								  	<?php foreach($testmonial_list as $list){?>
+								 <?php foreach($testmonial_list as $list){?>
                               <li class="swin-transition"><a href="javascript:void(0)" class="testimonial-nav-item"><img src="<?php echo base_url('assets/adminprofilepic/'.$list['image']);?>" alt="" class="img img-responsive swin-transition"></a></li>
-							<?php }?>                           
+							   <?php }?>                         
 						   </ul>
+						
                           </div>
-							
+							  
                         </div>
                       </div>
 					
@@ -227,7 +227,7 @@
               </div>
             </section>
 			
-								<?php } ?>
+				<?php } ?>
 			
 			
 			

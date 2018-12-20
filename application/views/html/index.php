@@ -38,7 +38,7 @@
                       <p class="top-title"><span>Our Menu</span></p>
                       <h3 class="title">Tasty And Good Price</h3>
                     </div>
-				<a target="_blank" href="<?php echo base_url('home/menu'); ?>" class="btn btn-primary">View More</a>
+				<a target="_blank" href="<?php echo base_url('home/menu'); ?>" class="btn btn-primary" style="float: right;">View More</a>
 
 					
                     <div class="swin-sc swin-sc-product products-01 style-02 woocommerce">
